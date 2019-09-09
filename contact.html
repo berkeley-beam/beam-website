@@ -1,7 +1,7 @@
 ---
 title: Contact
-heading: Get in touch today
-description: We'd love to help you improve your sales.
+heading: 
+description: Please reach out to us if you're interested in joining the BEAM family, whether you're a Berkeley student who wants to mentor with us, an elementary or middle school that would love to have us teach, or a company looking to support our efforts through a partnership!
 
 map:
   latitude: -45.8787605
@@ -9,12 +9,12 @@ map:
   address: "1 George Street, Dunedin, New Zealand"
   zoom: 13
 ---
-<div class="map" id="map"></div>
+<!--<div class="map" id="map"></div>-->
 
 
 <div class="contact-box">
 	<form action="{{ site.baseurl }}/contact-success/" method="post" class="contact-form">
-		<input type="hidden" name="_to" value="support@example.com" />
+		<input type="hidden" name="_to" value="beam.teach@gmail.com" />
 		<input type="text" name="_gotcha" style="display: none;">
 
 		<label for="name">Full Name</label>
@@ -30,11 +30,11 @@ map:
 	</form>
 
 	<div class="contact-details">
-		<h3 class="editable">Address</h3>
-		<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
-
 		<h3 class="editable">Email</h3>
-		<p><a href="mailto:support@example.com">support@example.com</a></p>
+		<p><a href="mailto:beam.teach@gmail.com">beam.teach@gmail.com</a></p>
+	
+		<h3 class="editable">Facebook</h3>
+		<p><a href="https://www.facebook.com/beam.teach/">BEAM</a></p>
 	</div>
 </div>
 
