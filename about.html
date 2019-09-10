@@ -2,13 +2,86 @@
 title: Our Team
 description: The BEAM team is a group of curious minds. STEM background or not, mentors love to learn and want to share this love to inspire the next generation of scientists and engineers.
 ---
-<p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_staff_members/" class="btn"><strong>&#9998;</strong> Manage Staff members</a></p>
-<ul class="staff">
-	{% for person in site.staff_members %}
-		<li>
-			<div class="square-image" style="border-radius:0"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
-			<div class="name"><p>{{ person.name }}</p></div>
-			<div class="position">{{ person.position }}</div>
-		</li>
-	{% endfor %}
-</ul>
+
+<link rel="stylesheet" href="{{ site.baseurl }}/css/about.css">
+
+<div class="content">
+    <center><h1>Our Team</h1></center>
+      <div id="tiles">
+      </div>
+	  <script>
+	  	  //List of all staff members.
+		  //[Name, Major/Yr, Committees, img filename (place in image folder, no file extension necessary)]
+		  //2019 execs: Abby, Stephanie Z, Nikki, Sophie, Jocelyn, Nico, Brendan, Tiffany, Kelvin
+      var data = [['Aaron He', 'ChemE 2021', 'Curriculum, Site Leading', 'aaron'],
+             ['Abby Cheng', 'ChemE 2021', 'Director of Logistics', 'abby'],
+             ['Ankur Jain', 'EECS & Business 2021', 'Logistics, Site Leading','ankur'],
+             ['Austin Nguyen', 'MechE 2022', 'Logistics, Site Leading','austin'],
+             ['Brendan Tsuda', 'Chemical Biology 2021','Director of Outreach', 'brendan'],
+             ['Briana Ong', 'IB 2020','President', 'briana'],
+             ['Cammie Young', 'Public Health 2021','Logistics, Mentor Development', 'cammie'],
+             ['Chelsea Yang', 'Chemistry 2020', 'Curriculum, Logistics','chelsea'],
+             ['Dana Yang', 'Applied Mathematics 2022','Curriculum, External Affairs', 'dana'],
+             ['Darren Kim', 'Business 2021', 'External Affairs, Site Leading','darrenk'],
+             ['Darren Omori', 'CS 2021', 'External Affairs, Logistics', 'darreno'],
+             ['David Paner', 'CS 2021','Curriculum, External Affairs', 'david'],
+             ['Elizabeth Greenberg', 'ChemE 2022', 'Curriculum, Site Leading','elizabeth'],
+             ['Evan Chin', 'ChemE 2021', 'Curriculum, Site Leading', 'evan'],
+             ['Jocelyn Liu', 'MCB 2020', 'Director of Site Leading', 'jocelyn'],
+             ['Jonas Katona', 'Applied Math 2020','Mentor Development, Outreach', 'jonas'],
+             ['Kahini Achrekar', 'Cognitive Science 2021','Mentor Development, Site Leading', 'kahini'],
+             ['Kaushal Partani', 'CS 2021', 'External Affairs, Site Leading','kaushal'],
+             ['Kayli Minear', 'Psychology & History 2020', 'External Affairs, Site Leading', 'kayli'],
+             ['Kelly Chang', 'MCB 2020', 'External Affairs, Site Leading','kelly'],
+             ['Kelvin Zhang', 'CS 2020', 'Director of External Affairs', 'kelvin'],
+             ['Krish Nayar', 'BioE 2021', 'Mentor Development, Site Leading', 'krish'],
+             ['Lauryn Jordan', 'BioE 2020', 'Outreach, Site Leading', 'lauryn'],
+             ['Monica Oh', 'IB 2020', 'Curriculum, Site Leading','monica'],
+             ['Nichole Sun', 'Data Science 2021','External Affairs, Mentor Development', 'nichole'],
+             ['Nico Carballal', 'MechE 2021', 'Director of Site Leading','nico'],
+             ['Nicole Denamur', 'IB 2020', 'Director of Curriculum', 'nikki'],
+             ['Nicole Zhu', 'CS 2021', 'Logistics, Mentor Development','nicole'],
+             ['Ningxin Zheng', 'MCB 2021', 'Curriculum, Logistics', 'ningxin'],
+             ['Peter Ren', 'Chemical Biology & CS 2020','Outreach, Site Leading', 'peter'],
+             ['Prashant Malyala', 'Business & CS 2022','Outreach, Site Leading', 'prashant'],
+             ['Radu Firtat', 'MCB 2020', 'Site Leading', 'radu'],
+             ['Rahul Devarapalli', 'CS 2021', 'Outreach, Site Leading','rahul'],
+             ['Sophie Yu', 'MCB 2021', 'Director of Curriculum', 'sophie'],
+             ['Stephanie Huang', 'MCB 2020', 'President','stephanieh'],
+             ['Stephanie Zhang', 'MCB 2020', 'Director of Logisitcs', 'stephaniez'],
+             ['Summer Bui', 'MCB 2021', 'Mentor Development, Outreach', 'summer'],
+             ['Tiffany Tran', 'IB & Psych 2020','Director of Mentor Development', 'tiffany'],
+             ['Zachary Huang', 'CS 2022', 'Curriculum, Logistics', 'zach']];
+      //Categories to sort by. In this case, sort by year.
+      var sortCategories = [
+      "President",
+      "Director",
+      "2019",
+      "2020",
+      "2021",
+      "2022"
+      ];
+		  var htmlExpr = '<div class=\"container-row\">';
+
+		  //Loop through each category and display all associated staff for each.
+		  for (var k = 0; k < sortCategories.length; k++) {
+			  for (var i = 0; i < data.length; i++) {
+				  if ((data[i][1].toString().includes(sortCategories[k]) || data[i][2].toString().includes(sortCategories[k])) && !htmlExpr.includes(data[i][0])) {
+					  //CSS Setup
+					  htmlExpr += '<div id=\"staff\">';
+					  htmlExpr += '<div id=\"staff-text\">';
+					  //Name
+					  htmlExpr += '<b><h2>' + data[i][0] + '</h2></b>';
+					  //Major/Year
+					  htmlExpr += '<h4>' + data[i][1] + '</h4>';
+					  //Committees
+					  htmlExpr += '<h4>' + data[i][2] + '</h4></div>';
+					  //Display image
+					  htmlExpr += '<img src=../images/2019_2020staff/' + data[i][3] + '.jpg id=hello></div>';
+				  }
+			  }
+		  }
+		  htmlExpr += '</div>';
+      document.getElementById("tiles").innerHTML += htmlExpr;
+      </script>
+    </div>
