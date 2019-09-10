@@ -45,11 +45,6 @@ body {
   display:block;
 }
 
-.content {
-  margin: auto;
-  width: 80%;
-}
-
 .panel {
   box-shadow: none;
   border: solid 3px;
@@ -356,8 +351,20 @@ h1 {
 /***********************
 * about Page Styling *
 ***********************/
-#hello {
+#staff-pic {
   vertical-align: middle;
   border: 0;
   max-width: 100%;
+  width: auto;
+  margin-right: 0;
+  margin-top: 0;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#about-content {
+  margin: auto;
 }
