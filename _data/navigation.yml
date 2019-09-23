@@ -1,7 +1,7 @@
 - name: Home
   link: /
   new_window: false
-  highlight: false 
+  highlight: false
 - name: News
   link: /news/
   new_window: false
@@ -19,6 +19,6 @@
   new_window: false
   highlight: false
 - name: Donate
-  link: /donate/
-  new_window: false
+  link: https://asuc.org/donate/
+  new_window: true
   highlight: false
