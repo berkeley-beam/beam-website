@@ -12,13 +12,13 @@
   - name: Contact
     link: /contact/
   - name: Donate
-    link: /donate/
+    link: https://asuc.org/donate/
 - links:
   - name: Facebook
-    link: https://facebook.com
-    new_window: false
+    link: https://www.facebook.com/beam.teach/
+    new_window: true
     social_icon: Facebook
   - name: Instagram
-    link: https://instagram.com
+    link: https://www.instagram.com/beam_berkeley/
     social_icon: Instagram
-    new_window: false
+    new_window: true
