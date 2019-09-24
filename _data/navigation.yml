@@ -22,3 +22,7 @@
   link: /donate/
   new_window: false
   highlight: false
+- name: Events
+  link: /calendar/
+  new_window: false
+  highlight: false 
