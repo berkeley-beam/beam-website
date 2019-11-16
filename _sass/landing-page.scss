@@ -1,3 +1,6 @@
+html {
+	scroll-behavior: smooth;
+  }
 .bottom-cta {
 	background: linear-gradient(to bottom, $brand-color 0%, $middle-gradient-color 100%);
 	color: #fff;
@@ -56,7 +59,7 @@
 		}
 	}
 
-	.content section:nth-child(even) .flex {
+	.content section:nth-child(odd) .flex {
 		flex-direction: row-reverse;
 	}
 }
@@ -64,50 +67,11 @@
 	position: relative;
 }
 
-#carousel {
-	/* Ensure that the contents flow horizontally */
-	overflow-x: auto;
-	white-space: nowrap;
-	display: flex;
-  }
-  
-  #carousel.vertical {
-	flex-direction: column;
-  }
-  
-  /* 2018 spec - For Safari 11, Chrome 69+ */
-  #carousel.snap {
-	scroll-snap-type: x mandatory;
-	-webkit-overflow-scrolling: touch; /* Needed to work on iOS Safari */
-  }
-  
-  #carousel.snap > div {
-	scroll-snap-align: center;
-  }
-  
-  #carousel.snap.vertical {
-	flex-direction: column;
-	scroll-snap-type: y mandatory;
-  }
-  
-  
-  
-  /* 2015 spec - For Firefox, Edge, IE */
-  #carousel.snap {
-	scroll-snap-type: mandatory;
-	-ms-scroll-snap-type: mandatory;
-	scroll-snap-points-x: repeat(100%);
-	-ms-scroll-snap-points-x: repeat(100%);
-  }
-  
-  #carousel.snap.vertical {
-	scroll-snap-points-x: initial;
-	-ms-scroll-snap-points-x: initial;
-	scroll-snap-points-y: repeat(100%);
-	-ms-scroll-snap-points-y: repeat(100%);
-  }
-  
+
+
+
   .Logo {
+
 	  position: relative;
 	  padding-top: 15%;
 	  padding-bottom: 15%;
@@ -116,61 +80,84 @@
 	  margin: auto;
 	  background-color: #4182e4;
 	  color: #ffffff;
-	  background-image: url("/images/test3.jpg");
-	  background-size: cover; 
+	  background-image: url("/images/test1.jpg");
+	  background-size: cover;
 	  width: 100%;
 	  height: 100%;
 	  overflow: hidden;
-	  
+
   }
   #acronym {
-	font-size: 10vw;
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+	font-family: 'Montserrat', sans-serif;
+	font-size: 200px;
   }
   #words {
-	  font-size: 2vw;
+	@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+	font-family: 'Source Sans Pro', sans-serif;
+	  font-size: 45px;
   }
-  /* Image Carousel Styling*/
-  
 
-  
-  #carousel {
-	position: relative;
-	// width: 100%;
-	// height: 100%;
-	background-color: #fff;
-	
+  .header {
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+	font-family: 'Montserrat', sans-serif;
+	font-style: "bold";
 
   }
-  
-  #carousel > div {
-	min-width: 100%;
-	min-height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	color: #fff;
+  .body {
+	@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+	font-family: 'Source Sans Pro', sans-serif;
 
   }
-  .carousel-photo {
-	min-width: 60vw;
-    max-width: 66vw;
-    max-height: 50vh;
-    min-height: 33vw;
+  p {
+	  color: black;
+	  line-height: 1.4em;
+	  font-size: 24px;
   }
-  
-  #carousel-1 {
-	// background-color: #e34747;
+  h2 {
+	  font-weight: 700;
   }
-  
-  #carousel-2 {
-	// background-color: #5ab92c;
-  }
-  
-  #carousel-3 {
-	// background-color: #226de2;
-  }
-  
 
-  
 
+  .scroll-down {
+    position: absolute;
+    left: 50%;
+    /* move arrow up and down */
+    bottom: 4%;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    z-index: 100;
+    text-decoration: none;
+    text-shadow: 0;
+    width: 20px;
+    height: 19px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    z-index: 9;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%) rotate(45deg);
+    -moz-transform: translate(-50%, 0%) rotate(45deg);
+    transform: translate(-50%, 0%) rotate(45deg);
+    -webkit-animation: fade_move_down 3s ease-in-out infinite;
+    -moz-animation:    fade_move_down 3s ease-in-out infinite;
+    animation:         fade_move_down 3s ease-in-out infinite;
+  }
+
+
+  /*animated scroll arrow animation*/
+  @-webkit-keyframes fade_move_down {
+    0%   { -webkit-transform:translate(0,-5px) rotate(45deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { -webkit-transform:translate(0,5px) rotate(45deg); opacity: 0; }
+  }
+  @-moz-keyframes fade_move_down {
+    0%   { -moz-transform:translate(0,-5px) rotate(45deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { -moz-transform:translate(0,5px) rotate(45deg); opacity: 0; }
+  }
+  @keyframes fade_move_down {
+    0%   { transform:translate(0,-5px) rotate(45deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { transform:translate(0,5px) rotate(45deg); opacity: 0; }
+  }

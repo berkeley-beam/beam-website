@@ -2,7 +2,7 @@
   link: /
   new_window: false
 
-  highlight: false 
+  highlight: false
 
   highlight: false
 - name: News
@@ -19,9 +19,6 @@
   new_window: false
   highlight: false
 
-- name: News
-  link: /news/
-  new_window: false
 
 - name: Contact
   link: /contact/
@@ -34,13 +31,5 @@
   highlight: false
 - name: Events
   link: /calendar/
-  new_window: false
-  highlight: false 
-- name: Contact
-  link: /contact/
-  new_window: false
-  highlight: false
-- name: Donate  
-  link: https://asuc.org/donate/
   new_window: false
   highlight: false
