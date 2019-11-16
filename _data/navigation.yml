@@ -1,7 +1,15 @@
 - name: Home
   link: /
   new_window: false
+
   highlight: false 
+
+  highlight: false
+- name: News
+  link: /news/
+  new_window: false
+  highlight: false
+
 - name: About
   link: /about/
   new_window: false
@@ -10,9 +18,19 @@
   link: /lessons/
   new_window: false
   highlight: false
+
 - name: News
   link: /news/
   new_window: false
+
+- name: Contact
+  link: /contact/
+  new_window: false
+  highlight: false
+- name: Donate
+  link: https://asuc.org/donate/
+  new_window: true
+
   highlight: false
 - name: Events
   link: /calendar/

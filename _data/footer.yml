@@ -16,9 +16,9 @@
 - links:
   - name: Facebook
     link: https://www.facebook.com/beam.teach/
-    new_window: false
+    new_window: true
     social_icon: Facebook
   - name: Instagram
     link: https://www.instagram.com/beam_berkeley/
     social_icon: Instagram
-    new_window: false
+    new_window: true
