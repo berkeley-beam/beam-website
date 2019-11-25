@@ -89,3 +89,35 @@
     opacity: 1;
   }
 }
+
+#Mission {
+  display: flex !important;
+  flex-direction: row;
+  padding-top: 5%;
+}
+
+.mission-photos {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+  
+ 
+
+  
+}
+.mp1 {
+width: 60vh;
+margin-right: 0px;
+}
+.mp2 {
+  width: 60vh;
+  padding-top: 10%;
+  margin-right: 0px;
+}
+
+
+#mission-statement {
+  display: flex;
+flex-direction: row;
+  
+}
