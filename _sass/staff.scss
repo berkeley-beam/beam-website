@@ -1,5 +1,6 @@
-html, body{ 
-  width:100%;
+html,
+body {
+  width: 100%;
 }
 
 .staff {
@@ -44,7 +45,6 @@ html, body{
   font-size: 36px;
   overflow: hidden;
   text-align: center;
-
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -62,9 +62,8 @@ html, body{
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-	border-bottom: 3px solid #ddd;
-	padding-bottom: 5px;
-
+  border-bottom: 3px solid #ddd;
+  padding-bottom: 5px;
 }
 
 /* Create an active/current tablink class */
@@ -102,23 +101,22 @@ html, body{
 }
 
 #news-content {
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 
 #news-image {
-  width : 100% !important;
+  width: 100% !important;
 }
 
 .mission-photos {
   display: flex;
   flex-direction: column;
   padding-left: 10%;
-
 }
 .mp1 {
-// width: 60vh;
-width: 25vw;
-margin-right: 0px;
+  // width: 60vh;
+  width: 25vw;
+  margin-right: 0px;
 }
 .mp2 {
   // width: 60vh;
@@ -127,11 +125,9 @@ margin-right: 0px;
   margin-right: 0px;
 }
 
-
 #mission-statement {
   display: flex;
-flex-direction: row;
-  
+  flex-direction: row;
 }
 
 #news {
@@ -142,7 +138,6 @@ flex-direction: row;
   position: relative;
   margin-left: -50vw;
   left: 50%;
-  
 }
 .news-row {
   display: flex;
@@ -150,21 +145,20 @@ flex-direction: row;
 }
 
 .news-logo {
-	width: 10vw !important;
+  width: 10vw !important;
 }
 
 .news-container {
-	margin: auto;
+  margin: auto;
   justify-content: space-evenly;
- 
-	width:25vw;
-	flex-wrap: wrap;
+
+  width: 25vw;
+  flex-wrap: wrap;
   display: flex;
 }
 
 .thumbnail {
   padding-top: 5%;
-  
 }
 
 .npr {
@@ -172,7 +166,7 @@ flex-direction: row;
 }
 
 .berk {
-  padding-left:5%;
+  padding-left: 5%;
   padding-right: 5%;
 }
 
@@ -182,11 +176,10 @@ flex-direction: row;
 
 //button styling
 .custom-button {
-
   border-radius: 7px;
   background-color: #004477;
   border: none;
-  color: #FFFFFF;
+  color: #ffffff;
   padding-right: 200px;
   font-size: 28px;
   padding: 20px;
@@ -204,7 +197,7 @@ flex-direction: row;
 }
 
 .custom-button span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -233,7 +226,6 @@ flex-direction: row;
   position: relative;
   margin-left: -50vw;
   left: 50%;
-  
 }
 
 .left-column {
@@ -244,13 +236,35 @@ flex-direction: row;
   display: flex;
   flex-direction: column;
   padding-left: 5%;
-
 }
 
 .descriptions {
   display: flex;
-justify-content: center;
+  justify-content: center;
+}
 
+.info-graph {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2em;
+}
 
+.icon {
+  width: 10em;
 
+  overflow: hidden;
+}
+
+.icon-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.count {
+  font-weight: bold;
+  font-size: 5em;
+}
+
+.parts {
+  text-align: left !important;
 }
