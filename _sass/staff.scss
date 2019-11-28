@@ -158,20 +158,20 @@ body {
 }
 
 .thumbnail {
-  padding-top: 5%;
+  margin-top: 5%;
 }
 
 .npr {
-  padding-left: 7.5%;
+  margin-left: 7.5%;
 }
 
 .berk {
-  padding-left: 5%;
-  padding-right: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .sfgate {
-  padding-right: 7.5%;
+  margin-right: 7.5%;
 }
 
 //button styling
@@ -263,8 +263,25 @@ body {
 .count {
   font-weight: bold;
   font-size: 5em;
+  margin-bottom: 0px;
+  margin-top: 0.3em;
+  text-align: left !important;
+  padding: 0px;
 }
 
 .parts {
   text-align: left !important;
+  font-size: 1.5em;
+  margin-top: 0px;
+}
+
+.structure-image {
+  padding-top: 5%;
+  margin-left: 50%;
+  width: 50% !important;
+  height: auto;
+}
+
+#Short-info {
+  display: flex;
 }
