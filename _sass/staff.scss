@@ -94,15 +94,7 @@ html, body{
   }
 }
 
-<<<<<<< HEAD
 #statement {
-=======
-#Mission {
-
-}
-
-#mission-content {
->>>>>>> 8da2cc4bbfd540160eebbc2e361070853a3f7265
   display: flex !important;
   flex-direction: row;
   padding-top: 5%;
@@ -139,7 +131,6 @@ margin-right: 0px;
 #mission-statement {
   display: flex;
 flex-direction: row;
-<<<<<<< HEAD
   
 }
 
@@ -233,23 +224,33 @@ flex-direction: row;
 .left {
   text-align: left;
 }
-=======
 
-}
-
-#structure-content {
-  display: flex !important;
-  flex-direction: row;
+#committees {
   padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #f2f2f2;
+  width: 98.5vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+  
 }
 
-#structure-statement {
+.left-column {
   display: flex;
-flex-direction: row;
+  flex-direction: column;
+}
+.right-column {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
 
 }
 
-#committee-content {
-  background-color: #F2F2F2;
+.descriptions {
+  display: flex;
+justify-content: center;
+
+
+
 }
->>>>>>> 8da2cc4bbfd540160eebbc2e361070853a3f7265
