@@ -94,28 +94,43 @@ html, body{
   }
 }
 
+<<<<<<< HEAD
 #statement {
+=======
+#Mission {
+
+}
+
+#mission-content {
+>>>>>>> 8da2cc4bbfd540160eebbc2e361070853a3f7265
   display: flex !important;
   flex-direction: row;
   padding-top: 5%;
   padding-bottom: 10%;
 }
 
+#news-content {
+  background-color: #F2F2F2;
+}
+
+#news-image {
+  width : 100% !important;
+}
+
 .mission-photos {
   display: flex;
   flex-direction: column;
   padding-left: 10%;
-  
- 
 
-  
 }
 .mp1 {
-width: 60vh;
+// width: 60vh;
+width: 25vw;
 margin-right: 0px;
 }
 .mp2 {
-  width: 60vh;
+  // width: 60vh;
+  width: 25vw;
   padding-top: 10%;
   margin-right: 0px;
 }
@@ -124,6 +139,7 @@ margin-right: 0px;
 #mission-statement {
   display: flex;
 flex-direction: row;
+<<<<<<< HEAD
   
 }
 
@@ -217,3 +233,23 @@ flex-direction: row;
 .left {
   text-align: left;
 }
+=======
+
+}
+
+#structure-content {
+  display: flex !important;
+  flex-direction: row;
+  padding-top: 5%;
+}
+
+#structure-statement {
+  display: flex;
+flex-direction: row;
+
+}
+
+#committee-content {
+  background-color: #F2F2F2;
+}
+>>>>>>> 8da2cc4bbfd540160eebbc2e361070853a3f7265
