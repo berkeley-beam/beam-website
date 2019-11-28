@@ -1,3 +1,7 @@
+html, body{ 
+  width:100%;
+}
+
 .staff {
   padding: 0;
   list-style: none;
@@ -90,10 +94,11 @@
   }
 }
 
-#Mission {
+#statement {
   display: flex !important;
   flex-direction: row;
   padding-top: 5%;
+  padding-bottom: 10%;
 }
 
 .mission-photos {
@@ -120,4 +125,95 @@ margin-right: 0px;
   display: flex;
 flex-direction: row;
   
+}
+
+#news {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #f2f2f2;
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+  
+}
+.news-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.news-logo {
+	width: 10vw !important;
+}
+
+.news-container {
+	margin: auto;
+  justify-content: space-evenly;
+ 
+	width:25vw;
+	flex-wrap: wrap;
+  display: flex;
+}
+
+.thumbnail {
+  padding-top: 5%;
+  
+}
+
+.npr {
+  padding-left: 7.5%;
+}
+
+.berk {
+  padding-left:5%;
+  padding-right: 5%;
+}
+
+.sfgate {
+  padding-right: 7.5%;
+}
+
+//button styling
+.custom-button {
+
+  border-radius: 7px;
+  background-color: #004477;
+  border: none;
+  color: #FFFFFF;
+  padding-right: 200px;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-right: 19.5vh;
+}
+
+.custom-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.custom-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.custom-button:hover span {
+  padding-right: 25px;
+}
+
+.custom-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.left {
+  text-align: left;
 }
