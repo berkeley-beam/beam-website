@@ -187,6 +187,7 @@ body {
   transition: all 0.5s;
   cursor: pointer;
   margin-right: 19.5vh;
+  filter: drop-shadow();
 }
 
 .custom-button span {
