@@ -1,8 +1,8 @@
 ---
-title: Lessons 
+title: Lessons
 description: Each of our lessons is custom-designed by one of our students from the curriculum committee and undergoes feedback and testing before it is brought to site. Our lessons present to elementary and middle school students a large breadth of engineering and science topics and we continue to produce new lessons each semester. Here are some of our favorites--we invite you to witness the work that we do or to even use them for your own classroom!
 ---
-
+<div id="lessons">
 <div class="lesson-container" id="lesson-container">
   <script>
     var lessons = [
@@ -26,49 +26,65 @@ description: Each of our lessons is custom-designed by one of our students from 
 
     html = "";
     for (var i = 0; i < lessons.length; i++) {
-      html += '<div class="thumbnail">';
+      if (i % 3 == 0) {
+        html += '<div class="thumbnail left">';
+      }
+      if (i % 3 == 1) {
+        html += '<div class="thumbnail mid">';
+      }
+      if (i % 3 == 2) {
+        html += '<div class="thumbnail right">';
+      }
       html += '<div class="caption">';
       // All images used here are royalty-free stock photos.
       html += '<img src="/images/' + lessons[i][0] + '.png" style="filter:sepia(0.4); -webkit-filter:sepia(0.4);-moz-filter:sepia(0.4);-ms-filter:sepia(0.4)">';
       html += '<h3>' + lessons[i][1]+ '</h3>';
       html += '<p>' + lessons[i][2] + '</p>';
-      html += '<p><a id="link" href="/lessons_archive/' + lessons[i][0] + '.pdf" target="_blank" class="btn btn-primary" role="button">View</a></p>';
+      html += '<a style="text-align: left;" id="link" href="/lessons_archive/' + lessons[i][0] + '.pdf" target="_blank"><button class="custom-button"><span>Read</span></button></a>';
       html += '</div></div>';
     }
     document.getElementById("lesson-container").innerHTML += html;
   </script>
 </div>
+</div>
 
-<div class="panel even-panel">
-    <center><h1>Final Lessons</h1></center>
-    <div class="content">
-      <p class="subtext">
-      	Some of our favorite final lessons!
-      </p>
+<div id="finlessons">
+      <center><h2>Final Lessons</h2>
+      <p>Every semester all of our mentors also create one lesson customized for the mentees at their site<br>
+      to teach as their final lesson. Here are some creative final lessons we want to showcase!</p>
+      </center>
+
+
+  <div class="lesson-container" id="final-lesson-container">
+    <script>
+      var lessons = [
+  	["all_about_the_solar_system", "All About the Solar System", "Oxford B: An introduction to astronomy and physics."],
+  	["the_cardiovascular_system", "The Ins and Outs Cardiovascular System", "Emerson: Learn about the various components of the cardiovascular system."],
+  	["climate_change", "Climate Change -- Watery Going to Do?", "Eres A: Ways to combat climate change with resource management and sustainable energy."],
+  	["shake_it_up", "Shake It Up!", "Longfellow B: Learn about the engineering behind earthquake damage prevention."]
+      ];
+
+      html = "";
+      for (var i = 0; i < lessons.length; i++) {
+        if (i % 3 == 0) {
+          html += '<div class="thumbnail left">';
+        }
+        if (i % 3 == 1) {
+          html += '<div class="thumbnail mid">';
+        }
+        if (i % 3 == 2) {
+          html += '<div class="thumbnail right">';
+        }
+        html += '<div class="caption">';
+        // All images used here are royalty-free stock photos.
+        html += '<img src="/images/' + lessons[i][0] + '.png" style="filter:sepia(0.4); -webkit-filter:sepia(0.4);-moz-filter:sepia(0.4);-ms-filter:sepia(0.4)">';
+        html += '<h3>' + lessons[i][1]+ '</h3>';
+        html += '<p>' + lessons[i][2] + '</p>';
+        html += '<a style="text-align: left;" id="link" href="/lessons_archive/' + lessons[i][0] + '.pdf" target="_blank"><button class="custom-button"><span>Read</span></button></a>';
+        html += '</div></div>';
+      }
+      document.getElementById("final-lesson-container").innerHTML += html;
+    </script>
   </div>
-</div>
 
-<div class="lesson-container" id="final-lesson-container">
-  <script>
-    var lessons = [
-	["all_about_the_solar_system", "All About the Solar System", "Oxford B: An introduction to astronomy and physics."],
-	["the_cardiovascular_system", "The Ins and Outs Cardiovascular System", "Emerson: Learn about the various components of the cardiovascular system."],
-	["climate_change", "Climate Change -- Watery Going to Do?", "Eres A: Ways to combat climate change with resource management and sustainable energy."],
-	["shake_it_up", "Shake It Up!", "Longfellow B: Learn about the engineering behind earthquake damage prevention."]
-    ];
-
-    html = "";
-    for (var i = 0; i < lessons.length; i++) {
-      html += '<div class="thumbnail">';
-      html += '<div class="caption">';
-      // All images used here are royalty-free stock photos.
-      html += '<img src="/images/' + lessons[i][0] + '.png" style="filter:sepia(0.4); -webkit-filter:sepia(0.4);-moz-filter:sepia(0.4);-ms-filter:sepia(0.4)">';
-      html += '<h3>' + lessons[i][1]+ '</h3>';
-      html += '<p>' + lessons[i][2] + '</p>';
-      html += '<p><a id="link" href="/lessons_archive/featured_final_lessons/' + lessons[i][0] + '.pdf" target="_blank" class="btn btn-primary" role="button">View</a></p>';
-      html += '</div></div>';
-    }
-    document.getElementById("final-lesson-container").innerHTML += html;
-  </script>
-</div>
-
+  </div>
