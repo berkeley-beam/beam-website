@@ -11,7 +11,7 @@
 .contact-box {
 	@extend %flexbox;
 	@include flex-flow(wrap);
-	max-width: 750px;
+	max-width: 75vw;
 	margin: 0 auto;
 
 	form {
@@ -32,5 +32,10 @@
 
 	.contact-details {
 		font-size: .9em;
+		padding-top: 1vh;
+	}
+
+	.contact-form {
+		max-width: 20vw;
 	}
 }

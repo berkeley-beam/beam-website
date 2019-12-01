@@ -1,7 +1,7 @@
 ---
-title: Contact
+title:
 heading:
-description: Please reach out to us if you're interested in joining the BEAM family, whether you're a Berkeley student who wants to mentor with us, an elementary or middle school that would love to have us teach, or a company looking to support our efforts through a partnership!
+description:
 
 
 ---
@@ -9,33 +9,34 @@ description: Please reach out to us if you're interested in joining the BEAM fam
 
 
 <div class="contact-box">
-	<form action="{{ site.baseurl }}/contact-success/" method="post" class="contact-form">
+	<div class="contact-details">
+		<h2 style="text-align: left; font-size: 2em;">Get in Touch!</h2>
+
+		<p style="font-size: 1.125em;" class="mission-statement">
+			Please reach out to us if you're interested in joining the BEAM family, whether you're a Berekely student who wants to mentor with us,
+		  an elementary or middle school that would love to have us teach, or a company looking to support our efforts through a partnership!</p>
+		<h3 class="editable">CONTACT INFORMATION</h3>
+		<p>For general inquiries, please reach out to us at <a href="mailto:beam.teach@gmail.com">beam.teach@gmail.com</a>. <br>
+			For partnerships, outreach opportunities, or educational events, please use <a href="mailto:beam.outreach@gmail.com">beam.outreach@gmail.com</a>.</p>
+
+		<br>
+
+		<p>You can also find us on <a href="https://www.facebook.com/beam.teach/">Facebook</a> and <a href="https://www.instagram.com/beam_berkeley/">Instagram</a>!</p>
+	</div>
+
+	<form action="mailto:kaushalpartani@gmail.com" method="post" class="contact-form">
 		<input type="hidden" name="_to" value="panerdavid99@gmail.com" />
 		<input type="text" name="_gotcha" style="display: none;">
 
-		<label for="name">Full Name</label>
-		<input type="text" name="name" id="name" placeholder="Enter your name..." />
+		<b><label for="name">Full Name *</label></b>
+		<input type="text" name="name" id="name" />
 
-		<label for="email">Email Address</label>
-		<input type="email" name="email" id="email" placeholder="Enter your email..." required />
+		<b><label for="email">Email Address *</label></b>
+		<input type="email" name="email" id="email" required />
 
-		<label for="message">Message</label>
-		<textarea name="message" id="message" placeholder="Enter your message..."></textarea>
+		<b><label for="message">Message *</label></b>
+		<textarea name="message" id="message" ></textarea>
 
 		<input type="submit" value="Send Message" />
 	</form>
-
-	<div class="contact-details">
-		<h3 class="editable">Email</h3>
-		<p>For general inquiries:</p>
-		<p><a href="mailto:beam.teach@gmail.com">beam.teach@gmail.com</a></p>
-		<p>For partnerships, outreach opportunities, or educational events:</p>
-		<p><a href="mailto:beam.outreach@gmail.com">beam.outreach@gmail.com</a></p>
-
-		<h3 class="editable">Social Media</h3>
-		<p><a href="https://www.facebook.com/beam.teach/">Facebook</a></p>
-		<p><a href="https://www.instagram.com/beam_berkeley/">Instagram</a></p>
-	</div>
 </div>
-
-
