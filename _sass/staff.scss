@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
 html,
 body {
   width: 100%;
+}
+
+h2, .count, .tablinks {
+  font-family: "Montserrat", sans-serif;
+}
+.source, p {
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .staff {
@@ -50,8 +60,6 @@ body {
 /* Style the buttons that are used to open the tab content */
 .tab button {
   background-color: inherit;
-  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
   border: none;
@@ -245,15 +253,18 @@ body {
   display: flex;
   justify-content: center;
 }
+#Short-info {
+  padding-top: 5%;
+}
 
 .info-graph {
   display: flex;
   flex-direction: column;
-  padding-top: 2em;
+  padding-top: 1.5em;
 }
 
 .icon {
-  width: 10em;
+  width: 8em;
 
   overflow: hidden;
 }
@@ -265,7 +276,7 @@ body {
 
 .count {
   font-weight: bold;
-  font-size: 5em;
+  font-size: 4.5em;
   margin-bottom: 0px;
   margin-top: 0.3em;
   text-align: left !important;
@@ -274,14 +285,14 @@ body {
 
 .parts {
   text-align: left !important;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-top: 0px;
 }
 
 .structure-image {
   padding-top: 5%;
-  margin-left: 50%;
-  width: 50% !important;
+  margin-left: 30%;
+  width: 60% !important;
   height: auto;
 }
 

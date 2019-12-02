@@ -1,86 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 .nav-open nav {
-	border-bottom: 1px dotted rgba(255, 255, 255, .2);
-	padding: 10px 0;
-	a {
-		display: block;
-	}
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+  padding: 10px 0;
+  a {
+    display: block;
+  }
 
-	@media #{$mid-point} {
-		border: 0;
-		padding: 0 20px;
+  @media #{$mid-point} {
+    border: 0;
+    padding: 0 20px;
 
-		a {
-			display: inline;
-		}
-	}
+    a {
+      display: inline;
+    }
+  }
 }
 
 nav {
-	text-transform: uppercase;
-	font-size: .8em;
-	width: 100%;
+  //text-transform: uppercase;
+  font-size: 0.9em;
+  
+  width: 100%;
 
-	@media #{$mid-point} {
-		text-align: right;
-		position: absolute;
-		top: 10px;
-		right: 0;
-		padding: 0 20px;
-	}
+  @media #{$mid-point} {
+    text-align: right;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    padding: 0 20px;
+  }
+  
 
+  a {
+    margin: 0 3px;
+    padding: 20px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: normal;
+    transition: 0.2s ease-in-out;
+    display: none;
+   
+    font-family: "Montserrat", sans-serif;
 
-	a {
-		margin: 0 3px;
-		padding: 20px 10px;
-		border-bottom: 1px solid rgba(255,255,255,0);
-		color: rgba(255,255,255,.8);
-		transition: .2s ease-in-out;
-		display: none;
+    @media #{$mid-point} {
+      display: inline;
+      padding: 10px;
+    }
 
-		@media #{$mid-point} {
-			display: inline;
-			padding: 10px;
-		}
+    &.nav-toggle {
+      display: inline;
+      position: absolute;
+      right: 10px;
+      top: -22px;
+      font-size: 1.9em;
+      border: 0;
 
+      @media #{$mid-point} {
+        display: none;
+      }
 
-		&.nav-toggle {
-			display: inline;
-			position: absolute;
-			right: 10px;
-			top: -22px;
-			font-size: 1.9em;
-			border: 0;
+      &:hover {
+        border: 0;
+      }
+    }
+  }
 
-			@media #{$mid-point} {
-				display: none;
-			}
+  a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+  }
 
-			&:hover {
-				border: 0;
-			}
-		}
-	}
+  @media #{$mid-point} {
+    a.highlight {
+      border: 1px #ccc solid;
+      border-radius: 5px;
 
-	a:hover {
+      &:hover {
+        background: #fff;
+        color: $brand-color;
+      }
+    }
+  }
 
-		border-bottom: 1px solid rgba(255,255,255,.3);
-		color: #fff;
-	}
-
-	@media #{$mid-point} {
-		a.highlight {
-			border: 1px #ccc solid;
-			border-radius: 5px;
-
-			&:hover {
-				background: #fff;
-				color: $brand-color;
-			}
-		}
-	}
-
-	a.active {
-		color: #fff;
-	}
-
+  a.active {
+    color: #fff;
+  }
 }

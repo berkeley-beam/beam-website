@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 .blog-posts {
 	list-style: none;
 	padding: 0;
@@ -36,6 +38,7 @@
 
 	h2 {
 		text-align: left;
+		font-family: 'Montserrat', sans-serif;
 	}
 
 	.blog-navigation {
