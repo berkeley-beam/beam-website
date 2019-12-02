@@ -4,32 +4,36 @@
 
   highlight: false
 
-  highlight: false
-- name: News
-  link: /news/
-  new_window: false
-  highlight: false
-
 - name: About
   link: /about/
   new_window: false
   highlight: false
+
 - name: Lessons
   link: /lessons/
   new_window: false
   highlight: false
+  highlight: false
+
+- name: Events
+  link: /calendar/
+  new_window: false
+  highlight: false
+
+- name: Donate
+  link: /donate/
+  new_window: false
 
 
 - name: Contact
   link: /contact/
   new_window: false
   highlight: false
-- name: Donate
-  link: /donate/
-  new_window: false
 
-  highlight: false
-- name: Events
-  link: /calendar/
+- name: Join
+  link: /join/
   new_window: false
   highlight: false
+
+
+ 
