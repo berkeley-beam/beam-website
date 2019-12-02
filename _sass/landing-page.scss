@@ -113,9 +113,13 @@ html {
 	  color: black;
 	  line-height: 1.4em;
 	  font-size: 24px;
+	  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+	font-family: 'Source Sans Pro', sans-serif;
   }
   h2 {
 	  font-weight: 700;
+	  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+	  font-family: 'Source Sans Pro', sans-serif;
   }
 
 

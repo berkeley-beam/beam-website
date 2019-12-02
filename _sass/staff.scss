@@ -50,7 +50,8 @@ body {
 /* Style the buttons that are used to open the tab content */
 .tab button {
   background-color: inherit;
-  font-family: Montserrat;
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
   border: none;
