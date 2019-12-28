@@ -233,7 +233,7 @@ h2, .count, .tablinks {
   padding-top: 5%;
   padding-bottom: 5%;
   background-color: #f2f2f2;
-  width: 98.5vw;
+  width: 100vw;
   position: relative;
   margin-left: -50vw;
   left: 50%;
@@ -298,6 +298,10 @@ h2, .count, .tablinks {
 
 #Short-info {
   display: flex;
+}
+a {
+  width: 0px;
+  overflow: hidden;
 }
 
 p {

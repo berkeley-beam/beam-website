@@ -1,6 +1,9 @@
 ---
 title: Lessons
-description: Each of our lessons is custom-designed by one of our staff members from the curriculum committee and undergoes feedback and testing before it is brought to site. Our lessons present to elementary and middle school students a large breadth of engineering and science topics and we continue to produce new lessons each semester. Here are some of our favorites—we invite you to witness the work that we do or to even use them for your own classroom!
+description: Each of our lessons is custom-designed by one of our staff members from the curriculum committee and
+undergoes feedback and testing before it is brought to site. Our lessons present to elementary and middle school
+students a large breadth of engineering and science topics and we continue to produce new lessons each semester. Here
+are some of our favorites—we invite you to witness the work that we do or to even use them for your own classroom!
 ---
 <div id="lessons">
   <div class="lesson-container" id="lesson-container">
@@ -36,11 +39,14 @@ description: Each of our lessons is custom-designed by one of our staff members 
           html += '<div class="thumbnail right">';
         }
         html += '<div class="caption">';
+        // <button
+        //               onclick="window.open('https://www.sfgate.com/education/article/Causes-on-top-of-classes-draw-UC-Berkeley-students-5922773.php', '_blank')"
+        //               class="custom-button"><span style="font-size: .8em; font-weight: normal;">Read</span></button>
         // All images used here are royalty-free stock photos.
         html += '<img src="/images/' + lessons[i][0] + '.png" style="filter:sepia(0.4); -webkit-filter:sepia(0.4);-moz-filter:sepia(0.4);-ms-filter:sepia(0.4)">';
         html += '<h3>' + lessons[i][1] + '</h3>';
         html += '<p>' + lessons[i][2] + '</p>';
-        html += '<a style="text-align: left;" id="link" href="/lessons_archive/' + lessons[i][0] + '.pdf" target="_blank"><button class="custom-button"><span style= "font-size: .8em; font-weight: normal;">View</span></button></a>';
+        html += '<button onclick = "window.open(' + "'../lessons_archive/" + lessons[i][0] + ".pdf'," + "'_blank')" + "\"" + 'class="custom-button"><span style= "font-size: .8em; font-weight: normal;">View</span></button>';
         html += '</div></div>';
       }
       document.getElementById("lesson-container").innerHTML += html;
@@ -81,7 +87,8 @@ description: Each of our lessons is custom-designed by one of our staff members 
         html += '<img src="/images/' + lessons[i][0] + '.png" style="filter:sepia(0.4); -webkit-filter:sepia(0.4);-moz-filter:sepia(0.4);-ms-filter:sepia(0.4)">';
         html += '<h3>' + lessons[i][1] + '</h3>';
         html += '<p>' + lessons[i][2] + '</p>';
-        html += '<a style="text-align: left;" id="link" href="/lessons_archive/' + lessons[i][0] + '.pdf" target="_blank"><button class="custom-button"><span style= "font-size: .8em; font-weight: normal;">View</span></button></a>';
+        html += '<button onclick = "window.open(' + "'../lessons_archive/featured_final_lessons/" + lessons[i][0] + ".pdf'," + "'_blank')" + "\"" + 'class="custom-button"><span style= "font-size: .8em; font-weight: normal;">View</span></button>';
+
         html += '</div></div>';
       }
       document.getElementById("final-lesson-container").innerHTML += html;
