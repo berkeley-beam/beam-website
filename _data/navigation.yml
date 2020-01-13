@@ -1,7 +1,6 @@
 - name: Home
   link: /
   new_window: false
-
   highlight: false
 
 - name: About
