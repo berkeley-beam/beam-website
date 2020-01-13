@@ -59,6 +59,7 @@ description: Each of our lessons is custom-designed by one of our staff members 
 
 
   <div class="lesson-container" id="final-lesson-container">
+
     <script>
       var lessons = [
         ["all_about_the_solar_system", "All About the Solar System", "Oxford B: A fun introduction to astronomy and physics, with a focus on satellite and spaceship design."],
@@ -88,8 +89,10 @@ description: Each of our lessons is custom-designed by one of our staff members 
         html += '<button style = "position: absolute; bottom: 0;" onclick = "window.open(' + "'../lessons_archive/featured_final_lessons/" + lessons[i][0] + ".pdf'," + "'_blank')" + "\"" + 'class="custom-button"><span style= "font-size: .8em; font-weight: normal;">View</span></button></div>';
 
       }
+    
       document.getElementById("final-lesson-container").innerHTML += html;
     </script>
+    
   </div>
 
 </div>
