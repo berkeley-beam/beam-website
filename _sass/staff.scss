@@ -291,13 +291,15 @@ h2, .count, .tablinks {
 
 .structure-image {
   padding-top: 5%;
-  margin-left: 30%;
-  width: 60% !important;
+  margin-left: 35%;
+  // width: 60% !important;
   height: auto;
 }
 
 #Short-info {
   display: flex;
+  width: 60%;
+  margin-left: 15%;
 }
 a {
   width: 0px;
