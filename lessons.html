@@ -27,24 +27,23 @@ description: Each of our lessons is custom-designed by one of our staff members 
       html = "";
       for (var i = 0; i < lessons.length; i++) {
         if (i % 3 == 0) {
-          html += '<div class="thumbnail left">';
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail left">';
         }
         if (i % 3 == 1) {
-          html += '<div class="thumbnail mid">';
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail mid">';
         }
         if (i % 3 == 2) {
-          html += '<div class="thumbnail right">';
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail right">';
         }
         html += '<div class="caption">';
-        // <button
-        //               onclick="window.open('https://www.sfgate.com/education/article/Causes-on-top-of-classes-draw-UC-Berkeley-students-5922773.php', '_blank')"
-        //               class="custom-button"><span style="font-size: .8em; font-weight: normal;">Read</span></button>
+        
         // All images used here are royalty-free stock photos.
         html += '<img src="/images/' + lessons[i][0] + '.png" style="filter:sepia(0.4); -webkit-filter:sepia(0.4);-moz-filter:sepia(0.4);-ms-filter:sepia(0.4)">';
         html += '<h3>' + lessons[i][1] + '</h3>';
         html += '<p>' + lessons[i][2] + '</p>';
-        html += '<button onclick = "window.open(' + "'../lessons_archive/" + lessons[i][0] + ".pdf'," + "'_blank')" + "\"" + 'class="custom-button"><span style= "font-size: .8em; font-weight: normal;">View</span></button>';
-        html += '</div></div>';
+        html += '</div>';
+        html += '<button style = "position: absolute; bottom: 0;" onclick = "window.open(' + "'../lessons_archive/" + lessons[i][0] + ".pdf'," + "'_blank')" + "\"" + 'class="custom-button"><span style= "font-size: .8em; font-weight: normal;">View</span></button></div>';
+      
       }
       document.getElementById("lesson-container").innerHTML += html;
     </script>
@@ -71,22 +70,23 @@ description: Each of our lessons is custom-designed by one of our staff members 
       html = "";
       for (var i = 0; i < lessons.length; i++) {
         if (i % 3 == 0) {
-          html += '<div class="thumbnail left">';
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail left">';
         }
         if (i % 3 == 1) {
-          html += '<div class="thumbnail mid">';
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail mid">';
         }
         if (i % 3 == 2) {
-          html += '<div class="thumbnail right">';
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail right">';
         }
         html += '<div class="caption">';
         // All images used here are royalty-free stock photos.
         html += '<img src="/images/' + lessons[i][0] + '.png" style="filter:sepia(0.4); -webkit-filter:sepia(0.4);-moz-filter:sepia(0.4);-ms-filter:sepia(0.4)">';
         html += '<h3>' + lessons[i][1] + '</h3>';
         html += '<p>' + lessons[i][2] + '</p>';
-        html += '<button onclick = "window.open(' + "'../lessons_archive/featured_final_lessons/" + lessons[i][0] + ".pdf'," + "'_blank')" + "\"" + 'class="custom-button"><span style= "font-size: .8em; font-weight: normal;">View</span></button>';
 
-        html += '</div></div>';
+        html += '</div>';
+        html += '<button style = "position: absolute; bottom: 0;" onclick = "window.open(' + "'../lessons_archive/featured_final_lessons/" + lessons[i][0] + ".pdf'," + "'_blank')" + "\"" + 'class="custom-button"><span style= "font-size: .8em; font-weight: normal;">View</span></button></div>';
+
       }
       document.getElementById("final-lesson-container").innerHTML += html;
     </script>
