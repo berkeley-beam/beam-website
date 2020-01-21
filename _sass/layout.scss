@@ -185,8 +185,8 @@ blockquote:before {
   display: -webkit-flex;
   display: flex;
   position: relative;
-  width: 100vw;
-  margin-left: -50vw;
+  width: 80vw;
+  margin-left: -40vw;
     left: 50%;
   overflow: scroll;
   margin-bottom: 10%;
@@ -232,7 +232,7 @@ span
     -webkit-flex-direction: column;
     flex-direction: column;
   }
-  
+
   /*Resizing message*/
   .horizontal-message
   {
@@ -243,4 +243,3 @@ span
     display: inline;
   }
 }
-

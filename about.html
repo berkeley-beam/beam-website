@@ -288,7 +288,6 @@ description:
             ['Brendan Tsuda', 'Chemical Biology 2021', 'Director of Outreach', 'brendan'],
             ['Briana Ong', 'IB 2020', 'President', 'briana'],
             ['Cammie Young', 'Public Health 2021', 'Logistics, Mentor Development', 'cammie'],
-            ['Chelsea Yang', 'Chemistry 2020', 'Curriculum, Logistics', 'chelsea'],
             ['Dana Yang', 'Applied Mathematics 2022', 'Curriculum, External Affairs', 'dana'],
             ['Darren Kim', 'Business 2021', 'External Affairs, Site Leading', 'darrenk'],
             ['Darren Omori', 'CS 2021', 'External Affairs, Logistics', 'darreno'],
@@ -305,7 +304,6 @@ description:
             ['Krish Nayar', 'BioE 2021', 'Mentor Development, Site Leading', 'krish'],
             ['Lauryn Jordan', 'BioE 2020', 'Outreach, Site Leading', 'lauryn'],
             ['Monica Oh', 'IB 2020', 'Curriculum, Site Leading', 'monica'],
-            ['Nichole Sun', 'Data Science 2021', 'External Affairs, Mentor Development', 'nichole'],
             ['Nico Carballal', 'MechE 2021', 'Director of Site Leading', 'nico'],
             ['Nicole Denamur', 'IB 2020', 'Director of Curriculum', 'nikki'],
             ['Nicole Zhu', 'CS 2021', 'Logistics, Mentor Development', 'nicole'],
@@ -336,8 +334,8 @@ description:
                 for (var i = 0; i < data.length; i++) {
                     if ((data[i][1].toString().includes(sortCategories[k]) || data[i][2].toString().includes(sortCategories[k])) && !htmlExpr.includes(data[i][0])) {
                         //CSS Setup
-                        htmlExpr += '<div id=\"staff\">';
-                        htmlExpr += '<div id=\"staff-text\">';
+                        htmlExpr += '<div id=\"staff\" style=\"padding:10px;\">';
+                        htmlExpr += '<div id=\"staff-text\" style=\"padding:10px;\">';
                         //Name
                         htmlExpr += '<b><h2 style="font-size:1.2em;">' + data[i][0] + '</h2></b>';
                         //Major/Year
