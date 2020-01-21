@@ -1,89 +1,364 @@
 ---
-title: Our Team
-description: The BEAM team is a group of curious minds. STEM background or not, mentors love to learn and want to share this love to inspire the next generation of scientists and engineers.
+title:
+description:
 ---
+
+
 
 
 
 <link rel="stylesheet" href="{{ site.baseurl }}/css/about.css">
 
+<!-- Tab links -->
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Mission')" id='defaultOpen'>Mission</button>
+    <button style="margin-left: 4%;" class="tablinks" onclick="openTab(event, 'Structure')">Structure</button>
 
-<div class="content" id="about-content">
-      <div id="tiles">
-      </div>
-	  <script>
-	  	  //List of all staff members.
-		  //[Name, Major/Yr, Committees, img filename (place in image folder, no file extension necessary)]
-		  //2019 execs: Abby, Stephanie Z, Nikki, Sophie, Jocelyn, Nico, Brendan, Tiffany, Kelvin
-      var data = [['Aaron He', 'ChemE 2021', 'Curriculum, Site Leading', 'aaron'],
-             ['Abby Cheng', 'ChemE 2021', 'Director of Logistics', 'abby'],
-             ['Ankur Jain', 'EECS & Business 2021', 'Logistics, Site Leading','ankur'],
-             ['Austin Nguyen', 'MechE 2022', 'Logistics, Site Leading','austin'],
-             ['Brendan Tsuda', 'Chemical Biology 2021','Director of Outreach', 'brendan'],
-             ['Briana Ong', 'IB 2020','President', 'briana'],
-             ['Cammie Young', 'Public Health 2021','Logistics, Mentor Development', 'cammie'],
-             ['Chelsea Yang', 'Chemistry 2020', 'Curriculum, Logistics','chelsea'],
-             ['Dana Yang', 'Applied Mathematics 2022','Curriculum, External Affairs', 'dana'],
-             ['Darren Kim', 'Business 2021', 'External Affairs, Site Leading','darrenk'],
-             ['Darren Omori', 'CS 2021', 'External Affairs, Logistics', 'darreno'],
-             ['David Paner', 'CS 2021','Curriculum, External Affairs', 'david'],
-             ['Elizabeth Greenberg', 'ChemE 2022', 'Curriculum, Site Leading','elizabeth'],
-             ['Evan Chin', 'ChemE 2021', 'Curriculum, Site Leading', 'evan'],
-             ['Jocelyn Liu', 'MCB 2020', 'Director of Site Leading', 'jocelyn'],
-             ['Jonas Katona', 'Applied Math 2020','Mentor Development, Outreach', 'jonas'],
-             ['Kahini Achrekar', 'Cognitive Science 2021','Mentor Development, Site Leading', 'kahini'],
-             ['Kaushal Partani', 'CS 2021', 'External Affairs, Site Leading','kaushal'],
-             ['Kayli Minear', 'Psychology & History 2020', 'External Affairs, Site Leading', 'kayli'],
-             ['Kelly Chang', 'MCB 2020', 'External Affairs, Site Leading','kelly'],
-             ['Kelvin Zhang', 'CS 2020', 'Director of External Affairs', 'kelvin'],
-             ['Krish Nayar', 'BioE 2021', 'Mentor Development, Site Leading', 'krish'],
-             ['Lauryn Jordan', 'BioE 2020', 'Outreach, Site Leading', 'lauryn'],
-             ['Monica Oh', 'IB 2020', 'Curriculum, Site Leading','monica'],
-             ['Nichole Sun', 'Data Science 2021','External Affairs, Mentor Development', 'nichole'],
-             ['Nico Carballal', 'MechE 2021', 'Director of Site Leading','nico'],
-             ['Nicole Denamur', 'IB 2020', 'Director of Curriculum', 'nikki'],
-             ['Nicole Zhu', 'CS 2021', 'Logistics, Mentor Development','nicole'],
-             ['Ningxin Zheng', 'MCB 2021', 'Curriculum, Logistics', 'ningxin'],
-             ['Peter Ren', 'Chemical Biology & CS 2020','Outreach, Site Leading', 'peter'],
-             ['Prashant Malyala', 'Business & CS 2022','Outreach, Site Leading', 'prashant'],
-             ['Radu Firtat', 'MCB 2020', 'Site Leading', 'radu'],
-             ['Rahul Devarapalli', 'CS 2021', 'Outreach, Site Leading','rahul'],
-             ['Sophie Yu', 'MCB 2021', 'Director of Curriculum', 'sophie'],
-             ['Stephanie Huang', 'MCB 2020', 'President','stephanieh'],
-             ['Stephanie Zhang', 'MCB 2020', 'Director of Logisitcs', 'stephaniez'],
-             ['Summer Bui', 'MCB 2021', 'Mentor Development, Outreach', 'summer'],
-             ['Tiffany Tran', 'IB & Psych 2020','Director of Mentor Development', 'tiffany'],
-             ['Zachary Huang', 'CS 2022', 'Curriculum, Logistics', 'zach']];
-      //Categories to sort by. In this case, sort by year.
-      var sortCategories = [
-      "President",
-      "Director",
-      "2019",
-      "2020",
-      "2021",
-      "2022"
-      ];
-		  var htmlExpr = '<div class=\"container-row\">';
 
-		  //Loop through each category and display all associated staff for each.
-		  for (var k = 0; k < sortCategories.length; k++) {
-			  for (var i = 0; i < data.length; i++) {
-				  if ((data[i][1].toString().includes(sortCategories[k]) || data[i][2].toString().includes(sortCategories[k])) && !htmlExpr.includes(data[i][0])) {
-					  //CSS Setup
-					  htmlExpr += '<div id=\"staff\">';
-					  htmlExpr += '<div id=\"staff-text\">';
-					  //Name
-					  htmlExpr += '<b><h2>' + data[i][0] + '</h2></b>';
-					  //Major/Year
-					  htmlExpr += '<h4>' + data[i][1] + '</h4>';
-					  //Committees
-					  htmlExpr += '<h4>' + data[i][2] + '</h4></div>';
-					  //Display image
-					  htmlExpr += '<img src=../images/2019_2020staff/' + data[i][3] + '.jpg id=staff-pic></div>';
-				  }
-			  }
-		  }
-		  htmlExpr += '</div>';
-      document.getElementById("tiles").innerHTML += htmlExpr;
-      </script>
+    <script>
+
+        function openTab(evt, tabName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+    </script>
+</div>
+
+
+
+<section id="Mission" class="tabcontent">
+
+    <div id="statement">
+        <div>
+            <h2 class="source" style="font-weight: 700; text-align: left; font-size: 2.1em;">BEAM is UC Berkeley's
+                premier outreach and mentorship
+                organization.</h2>
+
+
+            <p style="font-size: 1.125em;" class="mission-statement">Elementary and middle school students should be
+                able to explore their curiosity of
+                the
+                natural world. However, the reality is that many students do not have easy access to high quality STEM
+                education
+                due to a lack of time, money, or resources. Exposure to subjects in elementary school are related to
+                what
+                courses students later take, and consequently their future careers.
+                <br>
+                <br>
+                By writing our own engaging and hands-on
+                curriculum, providing a small student to mentor ratio, and encouraging problem-based learning, BEAM
+                hopes to
+                change perceptions of science and engineering—making it more fun and approachable and thus encouraging
+                students
+                of all socioeconomic backgrounds to pursue STEM careers.
+                <br>
+                <br>
+                Learn more about BEAM in some featured news articles below.</p>
+        </div>
+        <div class="mission-photos">
+            <img class="mp1" src="../images/mission1.jpg">
+            <img class="mp2" src="../images/mission2.png">
+        </div>
     </div>
+    <div id="news">
+        <h2>News</h2>
+        <div class="news-row">
+            <div class="thumbnal left">
+                <div class="news-logo">
+                    <img src="/images/npr.png">
+                </div>
+                <div class="news-container">
+                    <h3 class="source" style="font-weight: bold;">NPR | Will STEM education be the child left behind?
+                    </h3>
+                    <p style="font-size: 1.125em;">
+                        "A combination of budget cuts and policy decisions has left many local, state and federal bodies
+                        short on funds to robustly back science education...
+                        Volunteer and corporate-backed STEM networks 'can help schools bridge those gaps and make those
+                        connections.'"
+                    </p>
+
+
+
+
+                    <button
+                        onclick="window.open('http://www.npr.org/sections/ed/2015/10/28/451194296/will-stem-education-be-the-child-left-behind', '_blank')"
+                        class="custom-button"><span style="font-size: .8em; font-weight: normal;">Read</span></button>
+                </div>
+            </div>
+
+            <div class="thumbnal mid">
+                <div class="news-logo">
+                    <img style="padding-top: 18%; padding-bottom: 17%;" src="/images/berkscirev.png">
+                </div>
+                <div class="news-container">
+                    <h3 class="source" style="font-weight: bold;">Berkeley Science Review | Cal Engineering Students
+                        Take It To the
+                        Classroom</h3>
+                    <p style="font-size: 1.125em;">
+                        "[According to the Lawrence Hall of Science] 80% of local K-5 teachers spend less than 60
+                        minutes
+                        per week teaching science–and 16% spend no time at all.
+                        BEAM...step[s] in where the state and local governments have not."
+                    </p>
+
+                    <button
+                        onclick="window.open('http://berkeleysciencereview.com/beam-cal-engineering-students-take-it-to-the-classroom/', '_blank')"
+                        class="custom-button"><span style="font-size: .8em; font-weight: normal;">Read</span></button>
+
+
+                </div>
+            </div>
+
+            <div class="thumbnal right">
+                <div class="news-logo">
+                    <img style="padding-top: 3%; padding-bottom: 5%;" src="/images/sfgate.png">
+                </div>
+                <div class="news-container">
+                    <h3 class="source" style="font-weight: bold;">SFGate | Cause on top of classes draw UC Berkeley
+                        students</h3>
+                    <p style="font-size: 1.125em;">
+                        BEAM “is not just some sort of weekly outreach thing and you go and it’s like 'whatever,’” BEAM
+                        president ('14) Tiffany Chung says.
+                        “We really focus on understanding how to interact with a younger audience and what you can learn
+                        from the kids.
+                        We’re not just going in to help these kids because we’re some sort of 'benefactor’ group. It’s a
+                        two-way exchange.”
+                    </p>
+
+
+
+
+                    <button
+                        onclick="window.open('https://www.sfgate.com/education/article/Causes-on-top-of-classes-draw-UC-Berkeley-students-5922773.php', '_blank')"
+                        class="custom-button"><span style="font-size: .8em; font-weight: normal;">Read</span></button>
+                </div>
+            </div>
+
+
+        </div>
+
+</section>
+</div>
+
+
+<section id="Structure" class="tabcontent">
+    <section id="Short-info">
+        <div class="black">
+            <p style="font-size: 1.125em; width: 37em;">BEAM was founded in 2008 as both a non-profit student
+                organization and DeCal.
+                <br> We are entirely student-run!</p>
+            <div class="icon-row">
+                <div class="info-graph"> <img class="icon" src="../images/icons/mentor.png">
+                    <h1 class="count">120</h1>
+                    <h2 class="parts">MENTORS</h2>
+                </div>
+                <div style="margin-left: 10%;" class="info-graph"><img class="icon" src="../images/icons/kids.png">
+                    <h1 class="count">300+</h1>
+                    <h2 class="parts">K-8 STUDENTS</h2>
+                </div>
+                <div style="margin-left: 10%;" class="info-graph"><img class="icon" src="../images/icons/school.png">
+                    <h1 class="count">16</h1>
+                    <h2 class="parts">SCHOOLS</h2>
+                </div>
+
+            </div>
+        </div>
+        <div><img class="structure-image" src="../images/structure.jpg"></div>
+    </section>
+    <div id="committees" class="news-thumbnail" style="text-align:center">
+        <h2> Our Staff </h2>
+
+
+        <p>BEAM is run by 40 staff members, divided into 6 committees: <br>
+            curriculum, external affairs, logistics, mentor development, outreach, and site leading.</p>
+        <div class="descriptions">
+            <div class="left-column">
+                <div class="news-content" style="width:30vw;vertical-align:top">
+                    <h2 class="source" style="text-align:left; font-size:1.125em">CURRICULUM</h2>
+                    <p style="text-align:left;font-size:1.125em">Curriculum creates all the lessons we teach for BEAM!
+                        This
+                        includes not only writing the lesson itself but also testing each hands-on portion of the
+                        lesson.
+                        Curriculum
+                        also facilitates the Final Lesson planning process, guiding each site through the process of
+                        writing,
+                        testing, and teaching their own lesson.</p>
+                </div>
+
+                <div class="news-content" style="width:30vw;vertical-align:top">
+                    <h2 class="source" style="text-align:left;font-size:1.125em">EXTERNAL AFFAIRS</h2>
+                    <p style="text-align:left;font-size:1.125em">External Affairs manages BEAM’s finances and public
+                        relations. On
+                        the
+                        finance side, they manage our semesterly budget, secure funding sources from scholarships,
+                        grants, and
+                        campus departments, and look for ways to cut our costs. EA manages the Facebook page, Instagram
+                        account,
+                        and
+                        website to increase the public’s exposure to the work we do.</p>
+                </div>
+
+                <div class="news-content" style="width:30vw;vertical-align:top">
+                    <h2 class="source" style="text-align:left; font-size:1.125em">LOGISTICS</h2>
+                    <p style="text-align:left;font-size:1.125em">Logistics is responsible for all the materials BEAM
+                        uses
+                        for its
+                        lessons. They work with curriculum to ensure that the proposed materials are within budget, then
+                        purchases the materials and distributes them into the boxes that we take to site each week.
+                        Logistics
+                        also
+                        manages our overall inventory of materials so that materials are organized, easily accessible,
+                        and can
+                        be
+                        reused between semesters. </p>
+                </div>
+            </div>
+
+
+            <div class="right-column">
+                <div class="news-content" style="width:30vw;vertical-align:top">
+                    <h2 class="source" style="text-align:left; font-size:1.125em">MENTOR DEVELOPMENT</h2>
+                    <p style="text-align:left;font-size:1.125em">MD is responsible for the overall quality of BEAM’s
+                        mentorship.
+                        They
+                        organize various presentations and activities throughout the semester covering topics such as
+                        classroom
+                        management tips, teaching philosophies, and reflection projects to help facilitate mentors’
+                        growth.</p>
+                </div>
+
+                <div class="news-content" style="width:30vw;vertical-align:top;margin-top: 5.5%">
+                    <h2 class="source" style="text-align:left; font-size:1.125em">OUTREACH</h2>
+                    <p style="text-align:left;font-size:1.125em"> Outreach is responsible for ensuring that BEAM is a
+                        positive
+                        community where people are able to bond with each other and grow outside of the classroom. They
+                        organize
+                        internal socials and connect mentors with outside volunteering opportunities like Discovery
+                        Days,
+                        SPLASH,
+                        E4K, and Cal Day.</p>
+                </div>
+                <div class="news-content" style="width:30vw;vertical-align:top;margin-top: 5.5%">
+                    <h2 class="source" style="text-align:left; font-size:1.125em">SITE LEADING</h2>
+                    <p style="text-align:left;font-size:1.125em">Site Leading is made up of the site leaders and the two
+                        site
+                        coordinators. Site Leaders facilitate the weekly lessons at one of BEAM’s partner schools each
+                        semester
+                        while developing the mentors teaching under them. Our site coordinators act as a liaison between
+                        BEAM
+                        and
+                        all of its partner schools and facilitate conversations between site leaders to improve teaching
+                        across
+                        the
+                        board.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <h2 style="margin-top: 5%; margin-bottom: 5%;"> Meet Our Staff Members</h2>
+    <div class="content" id="about-content">
+        <div id="tiles">
+        </div>
+        <script>
+            //List of all staff members.
+            //[Name, Major/Yr, Committees, img filename (place in image folder, no file extension necessary)]
+            //2019 execs: Abby, Stephanie Z, Nikki, Sophie, Jocelyn, Nico, Brendan, Tiffany, Kelvin
+            var data = [['Aaron He', 'ChemE 2021', 'Curriculum, Site Leading', 'aaron'],
+            ['Abby Cheng', 'ChemE 2021', 'Director of Logistics', 'abby'],
+            ['Ankur Jain', 'EECS & Business 2021', 'Logistics, Site Leading', 'ankur'],
+            ['Austin Nguyen', 'MechE 2022', 'Logistics, Site Leading', 'austin'],
+            ['Brendan Tsuda', 'Chemical Biology 2021', 'Director of Outreach', 'brendan'],
+            ['Briana Ong', 'IB 2020', 'President', 'briana'],
+            ['Cammie Young', 'Public Health 2021', 'Logistics, Mentor Development', 'cammie'],
+            ['Dana Yang', 'Applied Mathematics 2022', 'Curriculum, External Affairs', 'dana'],
+            ['Darren Kim', 'Business 2021', 'External Affairs, Site Leading', 'darrenk'],
+            ['Darren Omori', 'CS 2021', 'External Affairs, Logistics', 'darreno'],
+            ['David Paner', 'CS 2021', 'Curriculum, External Affairs', 'david'],
+            ['Elizabeth Greenberg', 'ChemE 2022', 'Curriculum, Site Leading', 'elizabeth'],
+            ['Evan Chin', 'ChemE 2021', 'Curriculum, Site Leading', 'evan'],
+            ['Jocelyn Liu', 'MCB 2020', 'Director of Site Leading', 'jocelyn'],
+            ['Jonas Katona', 'Applied Math 2020', 'Mentor Development, Outreach', 'jonas'],
+            ['Kahini Achrekar', 'Cognitive Science 2021', 'Mentor Development, Site Leading', 'kahini'],
+            ['Kaushal Partani', 'CS 2021', 'External Affairs, Site Leading', 'kaushal'],
+            ['Kayli Minear', 'Psychology & History 2020', 'External Affairs, Site Leading', 'kayli'],
+            ['Kelly Chang', 'MCB 2020', 'External Affairs, Site Leading', 'kelly'],
+            ['Kelvin Zhang', 'CS 2020', 'Director of External Affairs', 'kelvin'],
+            ['Krish Nayar', 'BioE 2021', 'Mentor Development, Site Leading', 'krish'],
+            ['Lauryn Jordan', 'BioE 2020', 'Outreach, Site Leading', 'lauryn'],
+            ['Monica Oh', 'IB 2020', 'Curriculum, Site Leading', 'monica'],
+            ['Nico Carballal', 'MechE 2021', 'Director of Site Leading', 'nico'],
+            ['Nicole Denamur', 'IB 2020', 'Director of Curriculum', 'nikki'],
+            ['Nicole Zhu', 'CS 2021', 'Logistics, Mentor Development', 'nicole'],
+            ['Ningxin Zheng', 'MCB 2021', 'Curriculum, Logistics', 'ningxin'],
+            ['Peter Ren', 'Chemical Biology & CS 2020', 'Outreach, Site Leading', 'peter'],
+            ['Prashant Malyala', 'Business & CS 2022', 'Outreach, Site Leading', 'prashant'],
+            ['Radu Firtat', 'MCB 2020', 'Site Leading', 'radu'],
+            ['Rahul Devarapalli', 'CS 2021', 'Outreach, Site Leading', 'rahul'],
+            ['Sophie Yu', 'MCB 2021', 'Director of Curriculum', 'sophie'],
+            ['Stephanie Huang', 'MCB 2020', 'President', 'stephanieh'],
+            ['Stephanie Zhang', 'MCB 2020', 'Director of Logisitcs', 'stephaniez'],
+            ['Summer Bui', 'MCB 2021', 'Mentor Development, Outreach', 'summer'],
+            ['Tiffany Tran', 'IB & Psych 2020', 'Director of Mentor Development', 'tiffany'],
+            ['Zachary Huang', 'CS 2022', 'Curriculum, Logistics', 'zach']];
+            //Categories to sort by. In this case, sort by year.
+            var sortCategories = [
+                "President",
+                "Director",
+                "2019",
+                "2020",
+                "2021",
+                "2022"
+            ];
+            var htmlExpr = '<div class=\"container-row\">';
+
+            //Loop through each category and display all associated staff for each.
+            for (var k = 0; k < sortCategories.length; k++) {
+                for (var i = 0; i < data.length; i++) {
+                    if ((data[i][1].toString().includes(sortCategories[k]) || data[i][2].toString().includes(sortCategories[k])) && !htmlExpr.includes(data[i][0])) {
+                        //CSS Setup
+                        htmlExpr += '<div id=\"staff\" style=\"padding:10px;\">';
+                        htmlExpr += '<div id=\"staff-text\" style=\"padding:10px;\">';
+                        //Name
+                        htmlExpr += '<b><h2 style="font-size:1.2em;">' + data[i][0] + '</h2></b>';
+                        //Major/Year
+                        htmlExpr += '<h4>' + data[i][1] + '</h4>';
+                        //Committees
+                        htmlExpr += '<h4>' + data[i][2] + '</h4></div>';
+                        //Display image
+                        htmlExpr += '<img src=../images/2019_2020staff/' + data[i][3] + '.jpg id=staff-pic></div>';
+                    }
+                }
+            }
+            htmlExpr += '</div>';
+            document.getElementById("tiles").innerHTML += htmlExpr;
+        </script>
+    </div>
+
+
+
+
+
+</section>
+
+
+<script>
+    document.getElementById('defaultOpen').click();
+</script>

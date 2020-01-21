@@ -1,178 +1,54 @@
 ---
-title: Contact
+title:
 heading:
 description:
 
-map:
-  latitude: -45.8787605
-  longitude: 170.5027976
-  address: "1 George Street, Dunedin, New Zealand"
-  zoom: 13
+
 ---
 <!--<div class="map" id="map"></div>-->
+<!-- section style = "margin-bottom: 100px; padding-top: 90px; display: flex;"> -->
 
-<p class="subtext"> Please reach out to us if you're interested in joining the BEAM family, whether you're a Berkeley student who wants to mentor with us, an elementary or middle school that would love to have us teach, or a company looking to support our efforts through a partnership! </p>
-<div class="contact-box">
-	<form action="{{ site.baseurl }}/contact-success/" method="post" class="contact-form">
-		<input type="hidden" name="_to" value="kaushalpartani@gmail.com" />
+<div style="margin-bottom: 100px; padding-top: 80px; display: flex;" class="contact-box">
+	<div class="contact-details">
+		<h2 style="text-align: left; font-size: 2.250em;">Get in Touch!</h2>
+
+		<p style="font-size: 1.125em;" class="mission-statement">
+			Please reach out to us if you're interested in joining the BEAM family, whether you're a Berkeley student
+			who wants to mentor with us,
+			an elementary or middle school that would love to have us teach, or a company looking to support our efforts
+			through a partnership!</p>
+		<h3 class="editable">CONTACT INFORMATION</h3>
+		<p>For general inquiries, please reach out to us at <a
+				href="mailto:beam.teach@gmail.com">beam.teach@gmail.com</a>. <br>
+			For partnerships, outreach opportunities, or educational events, please use <a
+				href="mailto:beam.outreach@gmail.com">beam.outreach@gmail.com</a>.</p>
+
+		<br>
+
+		<p>You can also find us on <a href="https://www.facebook.com/beam.teach/">Facebook</a> and <a
+				href="https://www.instagram.com/beam_berkeley/">Instagram</a>!</p>
+	</div>
+
+	<form action="http://formspree.io/beam.teach@gmail.com" method="post" class="contact-form">
+		<input type="hidden" name="_to" value="beam.teach@gmail.com" />
 		<input type="text" name="_gotcha" style="display: none;">
 
-		<label for="name">Full Name</label>
-		<input type="text" name="name" id="name" placeholder="Enter your name..." />
+		<b><label for="name">Full Name *</label></b>
+		<input type="text" name="name" id="name" />
 
-		<label for="email">Email Address</label>
-		<input type="email" name="email" id="email" placeholder="Enter your email..." required />
+		<b><label for="email">Email Address *</label></b>
+		<input type="email" name="email" id="email" required />
 
-		<label for="message">Message</label>
-		<textarea name="message" id="message" placeholder="Enter your message..."></textarea>
+		<b><label for="message">Message *</label></b>
+		<textarea name="message" id="message"></textarea>
 
 		<input type="submit" value="Send Message" />
+
+		<!-- <a style="text-align: left;" id="link"
+		href="http://www.npr.org/sections/ed/2015/10/28/451194296/will-stem-education-be-the-child-left-behind"
+		target="_blank"><button class="custom-button"><span style= "font-size: .8em; font-weight: normal;">Read</span></button></a> -->
 	</form>
-
-	<div class="contact-details">
-		<h3 class="editable">Email</h3>
-		<p><a href="mailto:beam.teach@gmail.com">beam.teach@gmail.com</a></p>
-
-		<h3 class="editable">Facebook</h3>
-		<p><a href="https://www.facebook.com/beam.teach/">BEAM</a></p>
-	</div>
 </div>
 
-<script type="text/javascript">
-	window.mapData = {{ page.map | jsonify }};
-
-	function initMap() {
-		var myOptions = {
-			scrollwheel: false,
-			draggable: false,
-			panControl: false,
-			disableDefaultUI: true,
-			styles: [{
-				"featureType": "all",
-				"elementType": "labels.text.fill",
-				"stylers": [{
-					"saturation": 36
-				}, {
-					"color": "#000000"
-				}, {
-					"lightness": 40
-				}]
-			}, {
-				"featureType": "all",
-				"elementType": "labels.text.stroke",
-				"stylers": [{
-					"visibility": "on"
-				}, {
-					"color": "#000000"
-				}, {
-					"lightness": 16
-				}]
-			}, {
-				"featureType": "all",
-				"elementType": "labels.icon",
-				"stylers": [{
-					"visibility": "off"
-				}]
-			}, {
-				"featureType": "administrative",
-				"elementType": "geometry.fill",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 20
-				}]
-			}, {
-				"featureType": "administrative",
-				"elementType": "geometry.stroke",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 17
-				}, {
-					"weight": 1.2
-				}]
-			}, {
-				"featureType": "landscape",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 20
-				}]
-			}, {
-				"featureType": "poi",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 21
-				}]
-			}, {
-				"featureType": "road.highway",
-				"elementType": "geometry.fill",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 17
-				}]
-			}, {
-				"featureType": "road.highway",
-				"elementType": "geometry.stroke",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 29
-				}, {
-					"weight": 0.2
-				}]
-			}, {
-				"featureType": "road.arterial",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 18
-				}]
-			}, {
-				"featureType": "road.local",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 16
-				}]
-			}, {
-				"featureType": "transit",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 19
-				}]
-			}, {
-				"featureType": "water",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 17
-				}]
-			}],
-			zoom: window.mapData.zoom,
-			maxZoom: window.mapData.zoom,
-			minZoom: window.mapData.zoom,
-			center: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude),
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-		map = new google.maps.Map(document.getElementById("map"), myOptions);
-		marker = new google.maps.Marker({
-			map: map,
-			position: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
-		});
-
-		google.maps.event.addDomListener(window, "resize", function () {
-			map.setCenter(myOptions.center);
-		});
-	}
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ site.google_maps_javascript_api_key }}&amp;callback=initMap"></script>
+<div style="height:100px;">
+</div>

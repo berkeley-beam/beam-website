@@ -1,16 +1,16 @@
 ---
-title: Lessons 
-description: Each of our lessons is custom-designed by one of our students from the curriculum committee and undergoes feedback and testing before it is brought to site. Our lessons present to elementary and middle school students a large breadth of engineering and science topics and we continue to produce new lessons each semester. Here are some of our favorites--we invite you to witness the work that we do or to even use them for your own classroom!
+title: Lessons
+description: Each of our lessons is custom-designed by one of our staff members from the curriculum committee and undergoes feedback and testing before it is brought to site. Our lessons present to elementary and middle school students a large breadth of engineering and science topics and we continue to produce new lessons each semester. Here are some of our favorites—we invite you to witness the work that we do or to even use them for your own classroom!
 ---
-
-<div class="lesson-container" id="lesson-container">
-  <script>
-    var lessons = [
-	["a_handful_of_fun", "A Handful of Fun", "Show a handful of applications of bioengineering and prostheses."],
-	["oh_buoy", "Oh Buoy!", "Use hands-on demos and modules to give students a deep understanding of density."],
-	["we_belung_together", "We Be-Lung Together", "Learn about the lungs and the importance of our respiratory system."],
-	["feeling_eggsellent", "Feeling Eggsellent", "Use various building modules to introduce students to the concepts of force and impact."],
-	["watts_up", "Watt's Up?", "Create circuits, explore electricity, and build your own robot."],
+<div id="lessons">
+  <div class="lesson-container" id="lesson-container">
+    <script>
+      var lessons = [
+        ["a_handful_of_fun", "A Handful of Fun", "Show a handful of applications of bioengineering and prostheses."],
+        ["oh_buoy", "Oh Buoy!", "Use hands-on demos and modules to give students a deep understanding of density."],
+        ["we_belung_together", "We Be-Lung Together", "Learn about the lungs and the importance of our respiratory system."],
+        ["feeling_eggsellent", "Feeling Eggsellent", "Introduce students to the concepts of force and impact."],
+        ["watts_up", "Watt's Up?", "Create circuits, explore electricity, and build your own robot."],
         ["rollercoasters", "Marble Rollercoasters", "Introduce the concepts of potential and kinetic energy."],
         ["bottle_rockets", "Bottle Rockets", "Introduce students to the fundamentals of rockets and propulsion."],
         ["catapults", "Marshmallow Catapults", "Learn about simple kinematics and projectile motion."],
@@ -20,55 +20,79 @@ description: Each of our lessons is custom-designed by one of our students from 
         ["cryptography", "Cryptography", "Crack a murder mystery by solving various ciphers."],
         ["angular_momentum", "Angular Momentum", "Experiment with rotating objects to learn momentum, friction, and precession."],
         ["digestion", "Digestion", "Follow the digestive system by focusing on the mouth, stomach, and intestines."],
-        ["earthquakes", "Earthquakes", "Explore the challenges of building earthquake-proof structures."],
-        ["marine_science", "Marine Science", "Dive into oceanic physics, ecology, and conservation."]
-    ];
+        ["earthquakes", "Earthquakes", "Explore the challenges of building earthquake-proof structures."]
+        //["marine_science", "Marine Science", "Dive into oceanic physics, ecology, and conservation."]
+      ];
 
-    html = "";
-    for (var i = 0; i < lessons.length; i++) {
-      html += '<div class="thumbnail">';
-      html += '<div class="caption">';
-      // All images used here are royalty-free stock photos.
-      html += '<img src="/images/' + lessons[i][0] + '.png" style="filter:sepia(0.4); -webkit-filter:sepia(0.4);-moz-filter:sepia(0.4);-ms-filter:sepia(0.4)">';
-      html += '<h3>' + lessons[i][1]+ '</h3>';
-      html += '<p>' + lessons[i][2] + '</p>';
-      html += '<p><a id="link" href="/lessons_archive/' + lessons[i][0] + '.pdf" target="_blank" class="btn btn-primary" role="button">View</a></p>';
-      html += '</div></div>';
-    }
-    document.getElementById("lesson-container").innerHTML += html;
-  </script>
-</div>
-
-<div class="panel even-panel">
-    <center><h1>Final Lessons</h1></center>
-    <div class="content">
-      <p class="subtext">
-      	Some of our favorite final lessons!
-      </p>
+      html = "";
+      for (var i = 0; i < lessons.length; i++) {
+        if (i % 3 == 0) {
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail left">';
+        }
+        if (i % 3 == 1) {
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail mid">';
+        }
+        if (i % 3 == 2) {
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail right">';
+        }
+        html += '<div class="caption">';
+        
+        // All images used here are royalty-free stock photos.
+        html += '<img src="/images/' + lessons[i][0] + '.png" style="filter:sepia(0.4); -webkit-filter:sepia(0.4);-moz-filter:sepia(0.4);-ms-filter:sepia(0.4)">';
+        html += '<h3>' + lessons[i][1] + '</h3>';
+        html += '<p>' + lessons[i][2] + '</p>';
+        html += '</div>';
+        html += '<button style = "position: absolute; bottom: 0;" onclick = "window.open(' + "'../lessons_archive/" + lessons[i][0] + ".pdf'," + "'_blank')" + "\"" + 'class="custom-button"><span style= "font-size: .8em; font-weight: normal;">View</span></button></div>';
+      
+      }
+      document.getElementById("lesson-container").innerHTML += html;
+    </script>
   </div>
 </div>
 
-<div class="lesson-container" id="final-lesson-container">
-  <script>
-    var lessons = [
-	["all_about_the_solar_system", "All About the Solar System", "Oxford B: An introduction to astronomy and physics."],
-	["the_cardiovascular_system", "The Ins and Outs Cardiovascular System", "Emerson: Learn about the various components of the cardiovascular system."],
-	["climate_change", "Climate Change -- Watery Going to Do?", "Eres A: Ways to combat climate change with resource management and sustainable energy."],
-	["shake_it_up", "Shake It Up!", "Longfellow B: Learn about the engineering behind earthquake damage prevention."]
-    ];
+<div id="finlessons">
+  <center>
+    <h2>Final Lessons</h2>
+    <p>Every semester all of our mentors also create one lesson customized for the mentees at their site<br>
+      to teach as their final lesson. Here are some creative final lessons we want to showcase!</p>
+  </center>
 
-    html = "";
-    for (var i = 0; i < lessons.length; i++) {
-      html += '<div class="thumbnail">';
-      html += '<div class="caption">';
-      // All images used here are royalty-free stock photos.
-      html += '<img src="/images/' + lessons[i][0] + '.png" style="filter:sepia(0.4); -webkit-filter:sepia(0.4);-moz-filter:sepia(0.4);-ms-filter:sepia(0.4)">';
-      html += '<h3>' + lessons[i][1]+ '</h3>';
-      html += '<p>' + lessons[i][2] + '</p>';
-      html += '<p><a id="link" href="/lessons_archive/featured_final_lessons/' + lessons[i][0] + '.pdf" target="_blank" class="btn btn-primary" role="button">View</a></p>';
-      html += '</div></div>';
-    }
-    document.getElementById("final-lesson-container").innerHTML += html;
-  </script>
+
+  <div class="lesson-container" id="final-lesson-container">
+
+    <script>
+      var lessons = [
+        ["all_about_the_solar_system", "All About the Solar System", "Oxford B: A fun introduction to astronomy and physics, with a focus on satellite and spaceship design."],
+        ["the_cardiovascular_system", "The Ins and Outs Cardiovascular System", "Emerson: Learn about the various components of the cardiovascular system."],
+        ["climate_change", "Climate Change -- Watery Going to Do?", "Eres A: Combat climate change with resource management and sustainable energy."]
+        //["shake_it_up", "Shake It Up!", "Longfellow B: Learn about the engineering behind earthquake damage prevention."]
+      ];
+
+      html = "";
+      for (var i = 0; i < lessons.length; i++) {
+        if (i % 3 == 0) {
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail left">';
+        }
+        if (i % 3 == 1) {
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail mid">';
+        }
+        if (i % 3 == 2) {
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail right">';
+        }
+        html += '<div class="caption">';
+        // All images used here are royalty-free stock photos.
+        html += '<img src="/images/' + lessons[i][0] + '.png" style="filter:sepia(0.4); -webkit-filter:sepia(0.4);-moz-filter:sepia(0.4);-ms-filter:sepia(0.4)">';
+        html += '<h3>' + lessons[i][1] + '</h3>';
+        html += '<p>' + lessons[i][2] + '</p>';
+
+        html += '</div>';
+        html += '<button style = "position: absolute; bottom: 0;" onclick = "window.open(' + "'../lessons_archive/featured_final_lessons/" + lessons[i][0] + ".pdf'," + "'_blank')" + "\"" + 'class="custom-button"><span style= "font-size: .8em; font-weight: normal;">View</span></button></div>';
+
+      }
+    
+      document.getElementById("final-lesson-container").innerHTML += html;
+    </script>
+    
+  </div>
+
 </div>
-

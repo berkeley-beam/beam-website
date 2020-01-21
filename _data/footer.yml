@@ -1,18 +1,22 @@
 - links:
   - name: Home
     link: /
-  - name: News
-    link: /news/
-- links:
   - name: About
     link: /about/
+- links:
   - name: Lessons
     link: /lessons/
+  - name: Events
+    link: /calendar/
 - links:
+  - name: Donate
+    link: /donate/
   - name: Contact
     link: /contact/
-  - name: Donate
-    link: https://asuc.org/donate/
+- links:
+  - name: Join
+    link: /join/
+
 - links:
   - name: Facebook
     link: https://www.facebook.com/beam.teach/

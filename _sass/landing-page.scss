@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+html {
+	scroll-behavior: smooth;
+  }
+
 
 .bottom-cta {
 	background: linear-gradient(to bottom, $brand-color 0%, $middle-gradient-color 100%);
@@ -57,7 +62,7 @@
 		}
 	}
 
-	.content section:nth-child(even) .flex {
+	.content section:nth-child(odd) .flex {
 		flex-direction: row-reverse;
 	}
 }
@@ -65,291 +70,106 @@
 	position: relative;
 }
 
-#carousel {
-	/* Ensure that the contents flow horizontally */
-	overflow-x: auto;
-	white-space: nowrap;
-	display: flex;
-  }
-  
-  #carousel.vertical {
-	flex-direction: column;
-  }
-  
-  /* 2018 spec - For Safari 11, Chrome 69+ */
-  #carousel.snap {
-	scroll-snap-type: x mandatory;
-	-webkit-overflow-scrolling: touch; /* Needed to work on iOS Safari */
-  }
-  
-  #carousel.snap > div {
-	scroll-snap-align: center;
-  }
-  
-  #carousel.snap.vertical {
-	flex-direction: column;
-	scroll-snap-type: y mandatory;
-  }
-  
-  
-  
-  /* 2015 spec - For Firefox, Edge, IE */
-  #carousel.snap {
-	scroll-snap-type: mandatory;
-	-ms-scroll-snap-type: mandatory;
-	scroll-snap-points-x: repeat(100%);
-	-ms-scroll-snap-points-x: repeat(100%);
-  }
-  
-  #carousel.snap.vertical {
-	scroll-snap-points-x: initial;
-	-ms-scroll-snap-points-x: initial;
-	scroll-snap-points-y: repeat(100%);
-	-ms-scroll-snap-points-y: repeat(100%);
-  }
-  
+
+
+
   .Logo {
+
 	  position: relative;
 	  padding-top: 15%;
-	  padding-bottom: 15%;
-	//   padding: 100%;
+	  padding-bottom: 19%;
 	  text-align: center;
 	  margin: auto;
-	  background-color: #4182e4;
+	  background-color: #004777;
 	  color: #ffffff;
-	  background-image:  url("/images/test3.jpg");
-	  background-size: cover; 
+	  background-image: url("/images/fa19decal.jpg");
+	  background-size: cover;
 	  width: 100%;
 	  height: 100%;
 	  overflow: hidden;
-	  
+
   }
   #acronym {
-	font-size: 10vw;
+	
+	font-family: 'Montserrat', sans-serif;
+	font-size: 180px;
+
+
   }
   #words {
-	  font-size: 2vw;
+	font-family: 'Source Sans Pro', sans-serif;
+	  font-size: 40px;
+	  margin-top: -2%;
   }
-  /* Image Carousel Styling*/
-  
 
-  
-  #carousel {
-	position: relative;
-	// width: 100%;
-	// height: 100%;
-	background-color: #fff;
+  .header {
+	font-family: 'Montserrat', sans-serif;
+	font-style: "bold";
+
+  }
+  .body {
+	font-family: 'Source Sans Pro', sans-serif;
+
+  }
+  p {
+	  color: black;
+	  line-height: 1.4em;
+	  font-size: 24px;
+	font-family: 'Source Sans Pro', sans-serif;
+  }
+  h2 {
+	  font-weight: 700;
+	  font-family: 'Source Sans Pro', sans-serif;
+  }
+
+
+  .scroll-down {
+    position: absolute;
+    left: 50%;
+    /* move arrow up and down */
+    bottom: 8%;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    z-index: 100;
+    text-decoration: none;
+    text-shadow: 0;
+    width: 20px;
+    height: 19px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    z-index: 9;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%) rotate(45deg);
+    -moz-transform: translate(-50%, 0%) rotate(45deg);
+    transform: translate(-50%, 0%) rotate(45deg);
+    -webkit-animation: fade_move_down 3s ease-in-out infinite;
+    -moz-animation:    fade_move_down 3s ease-in-out infinite;
+    animation:         fade_move_down 3s ease-in-out infinite;
+  }
+
+
+  /*animated scroll arrow animation*/
+  @-webkit-keyframes fade_move_down {
+    0%   { -webkit-transform:translate(0,-5px) rotate(45deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { -webkit-transform:translate(0,5px) rotate(45deg); opacity: 0; }
+  }
+  @-moz-keyframes fade_move_down {
+    0%   { -moz-transform:translate(0,-5px) rotate(45deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { -moz-transform:translate(0,5px) rotate(45deg); opacity: 0; }
+  }
+  @keyframes fade_move_down {
+    0%   { transform:translate(0,-5px) rotate(45deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { transform:translate(0,5px) rotate(45deg); opacity: 0; }
+  }
+
+  //resizing 
+@media only screen and (max-width: 400px) {
+	section {
+		text-align: center;
+	}
 	
-
-  }
-  
-  #carousel > div {
-	min-width: 100%;
-	min-height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	color: #fff;
-
-  }
-  .carousel-photo {
-	min-width: 60vw;
-    max-width: 66vw;
-    max-height: 50vh;
-    min-height: 33vw;
-  }
-  
-  #carousel-1 {
-	// background-color: #e34747;
-  }
-  
-  #carousel-2 {
-	// background-color: #5ab92c;
-  }
-  
-  #carousel-3 {
-	// background-color: #226de2;
-  }
-  
-
-  
-
-=======
-.bottom-cta {
-	background: linear-gradient(to bottom, $brand-color 0%, $middle-gradient-color 100%);
-	color: #fff;
-	text-align: center;
-	margin: 0;
-	padding: 100px 0;
-
-	h2 {
-		margin-bottom: 50px;
 	}
-}
-
-.testimonial {
-	background: #f5f5f5;
-	margin: 0;
-	padding: 100px 0;
-
-	.testimonial-block {
-		max-width: 750px;
-		width: 98%;
-		margin: 0 auto;
-
-		@media #{$tablet} {
-			@include flexbox;
-
-			blockquote {
-				-webkit-flex: 1;
-				flex: 1;
-			}
-		}
-	}
-}
-
-.hero {
-	color: #ffffff;
-	text-align: center;
-	background: linear-gradient(to bottom, $middle-gradient-color 0%, $secondary-brand-color 100%) no-repeat #a05fb7;
-	padding-top: 50px;
-
-	p {
-		color: #fff;
-	}
-}
-
-
-@media #{$desktop} {
-	.flex {
-		@include flexbox;
-		align-items: center;
-		flex-direction: row;
-
-		.text, .image {
-			-webkit-flex: 1;
-			flex: 1;
-			padding: 0 20px;
-		}
-	}
-
-	.content section:nth-child(even) .flex {
-		flex-direction: row-reverse;
-	}
-}
-#map {
-	position: relative;
-}
-
-#carousel {
-	/* Ensure that the contents flow horizontally */
-	overflow-x: auto;
-	white-space: nowrap;
-	display: flex;
-  }
-  
-  #carousel.vertical {
-	flex-direction: column;
-  }
-  
-  /* 2018 spec - For Safari 11, Chrome 69+ */
-  #carousel.snap {
-	scroll-snap-type: x mandatory;
-	-webkit-overflow-scrolling: touch; /* Needed to work on iOS Safari */
-  }
-  
-  #carousel.snap > div {
-	scroll-snap-align: center;
-  }
-  
-  #carousel.snap.vertical {
-	flex-direction: column;
-	scroll-snap-type: y mandatory;
-  }
-  
-  
-  
-  /* 2015 spec - For Firefox, Edge, IE */
-  #carousel.snap {
-	scroll-snap-type: mandatory;
-	-ms-scroll-snap-type: mandatory;
-	scroll-snap-points-x: repeat(100%);
-	-ms-scroll-snap-points-x: repeat(100%);
-  }
-  
-  #carousel.snap.vertical {
-	scroll-snap-points-x: initial;
-	-ms-scroll-snap-points-x: initial;
-	scroll-snap-points-y: repeat(100%);
-	-ms-scroll-snap-points-y: repeat(100%);
-  }
-  
-  .Logo {
-	  position: relative;
-	  padding-top: 15%;
-	  padding-bottom: 15%;
-	//    padding: 100%;
-	  text-align: center;
-	  margin: auto;
-	  background-color: #4182e4;
-	  color: #ffffff;
-	  background-image:  url("/images/test3.jpg");
-	  background-size: cover; 
-	  width: 100%;
-	  height: 100%;
-	  overflow: hidden;
-	  
-  }
-  #acronym {
-	font-size: 10vw;
-  }
-  #words {
-	  font-size: 2vw;
-  }
-  /* Image Carousel Styling*/
-  
-
-  
-  #carousel {
-	position: relative;
-	// width: 100%;
-	// height: 100%;
-	background-color: #fff;
-	
-
-  }
-  
-  #carousel > div {
-	min-width: 100%;
-	min-height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	color: #fff;
-
-  }
-  .carousel-photo {
-	min-width: 60vw;
-    max-width: 66vw;
-    max-height: 50vh;
-    min-height: 33vw;
-  }
-  
-  #carousel-1 {
-	// background-color: #e34747;
-  }
-  
-  #carousel-2 {
-	// background-color: #5ab92c;
-  }
-  
-  #carousel-3 {
-	// background-color: #226de2;
-  }
-  
-
-  
-
-

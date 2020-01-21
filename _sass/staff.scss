@@ -1,38 +1,314 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
+html,
+body {
+  width: 100%;
+}
+
+h2, .count, .tablinks {
+  font-family: "Montserrat", sans-serif;
+}
+.source, p {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 .staff {
-	padding: 0;
-	list-style: none;
-	@extend %flexbox;
-	@include flex-flow(wrap);
-	text-align: center;
-	li {
-		padding: 30px 20px;
-		box-sizing: border-box;
-		width: 100%;
+  padding: 0;
+  list-style: none;
+  @extend %flexbox;
+  @include flex-flow(wrap);
+  text-align: center;
+  li {
+    padding: 30px 20px;
+    box-sizing: border-box;
+    width: 100%;
 
-		@media #{$tablet} {
-			@include flex(1, 1, 45%);
-		}
+    @media #{$tablet} {
+      @include flex(1, 1, 45%);
+    }
 
-		@media #{$desktop} {
-			@include flex(1, 1, 29%);
-		}
+    @media #{$desktop} {
+      @include flex(1, 1, 29%);
+    }
+  }
 
-	}
+  .square-image {
+    width: 200px;
+    height: 200px;
+    img {
+      border-radius: 200px;
+    }
+  }
 
-	.square-image {
-		width: 200px;
-		height: 200px;
-			img {
-				border-radius: 200px;
-			}
-		}
+  .name {
+    font-size: 1.3em;
+    margin-top: 20px;
+  }
 
-	.name {
-		font-size: 1.3em;
-		margin-top: 20px;
-	}
+  .position {
+    color: #666;
+  }
+}
+/* Style the tab */
+.tab {
+  font-size: 36px;
+  overflow: hidden;
+  text-align: center;
+}
 
-	.position {
-		color: #666;
-	}
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  font-style: normal;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  //padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  border-bottom: 3px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  border-bottom: 3px solid black;
+  padding-bottom: 5px;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+
+  border-top: none;
+}
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#statement {
+  display: flex !important;
+  flex-direction: row;
+  padding-top: 5%;
+  padding-bottom: 10%;
+}
+
+#news-content {
+  background-color: #f2f2f2;
+}
+
+#news-image {
+  width: 100% !important;
+}
+
+.mission-photos {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+}
+.mp1 {
+  // width: 60vh;
+  width: 25vw;
+  margin-right: 0px;
+}
+.mp2 {
+  // width: 60vh;
+  width: 25vw;
+  padding-top: 10%;
+  margin-right: 0px;
+}
+
+#mission-statement {
+  display: flex;
+  flex-direction: row;
+}
+
+#news {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #f2f2f2;
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+}
+.news-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.news-logo {
+  width: 10vw !important;
+}
+
+.news-container {
+  margin: auto;
+  justify-content: space-evenly;
+
+  width: 25vw;
+  flex-wrap: wrap;
+  //display: flex;
+}
+
+.thumbnail {
+  margin-top: 5%;
+}
+
+.left {
+  margin-left: 7.5%;
+}
+
+.mid {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.right {
+  margin-right: 7.5%;
+}
+
+//button styling
+.custom-button {
+  border-radius: 7px;
+  background-color: #004477;
+  border: none;
+  color: #ffffff;
+  padding-right: 15%;
+  font-size: 1.5em;
+  padding: 3% 5% 3% 5%;
+  width: 5em;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-right: 19.5vh;
+  
+  filter: drop-shadow();
+}
+
+.custom-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.custom-button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.custom-button:hover span {
+  padding-right: 25px;
+}
+
+.custom-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.left {
+  text-align: left;
+}
+
+#committees {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #f2f2f2;
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+}
+.right-column {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+}
+
+.descriptions {
+  display: flex;
+  justify-content: center;
+}
+#Short-info {
+  padding-top: 5%;
+}
+
+.info-graph {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5em;
+}
+
+.icon {
+  width: 8em;
+
+  overflow: hidden;
+}
+
+.icon-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.count {
+  font-weight: bold;
+  font-size: 4.5em;
+  margin-bottom: 0px;
+  margin-top: 0.3em;
+  text-align: left !important;
+  padding: 0px;
+}
+
+.parts {
+  text-align: left !important;
+  font-size: 1.2em;
+  margin-top: 0px;
+}
+
+.structure-image {
+  padding-top: 5%;
+  margin-left: 35%;
+  // width: 60% !important;
+  height: auto;
+}
+
+#Short-info {
+  display: flex;
+  width: 60%;
+  margin-left: 15%;
+}
+a {
+  width: 0px;
+
+}
+
+p {
+font-size: 1.125em;
+}
+.box {
+  text-align: center;
 }
