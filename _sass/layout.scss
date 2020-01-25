@@ -191,6 +191,7 @@ blockquote:before {
   overflow: scroll;
   margin-bottom: 10%;
   margin-top: 5%;
+	overflow-y: hidden;
 }
 
 .slideshow > div
@@ -276,6 +277,6 @@ span
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size: 20%;
-	
+
 
 }
