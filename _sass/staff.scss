@@ -261,6 +261,8 @@ h2, .count, .tablinks {
   display: flex;
   flex-direction: column;
   padding-top: 1.5em;
+  flex: 1;
+  padding-left: 2.5%;
 }
 
 .icon {
