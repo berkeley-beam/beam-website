@@ -4,93 +4,95 @@ heading:
 description: In addition to visiting our local elementary and middle schools weekly, our mentors also help organize and volunteer at a variety of educational outreach events throughout our community. Check out some highlights from our previous events below, and stay posted to see what events we will be participating in this semester!
 ---
 <title> Events </title>
+<head>
+  
+</head>
 
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css'>
 
 <style>
+  #app {
+    padding: 50px 0;
+  }
 
-#app {
-  padding: 50px 0;
-}
+  .timeline {
+    margin: 50px 0;
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    text-align: center;
+  }
 
-.timeline {
-  margin: 50px 0;
-  list-style-type: none;
-  display: flex;
-  padding: 0;
-  text-align: center;
-}
+  .timeline li {
+    transition: all 200ms ease-in;
+  }
 
-.timeline li {
-  transition: all 200ms ease-in;
-}
+  .timestamp {
+    width: 200px;
+    margin-bottom: 20px;
+    padding: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 100;
+  }
 
-.timestamp {
-  width: 200px;
-  margin-bottom: 20px;
-  padding: 0px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-weight: 100;
-}
+  .status {
+    padding: 0px 40px;
+    display: flex;
+    justify-content: center;
+    border-top: 4px solid #3e70ff;
+    position: relative;
+    transition: all 200ms ease-in;
+  }
 
-.status {
-  padding: 0px 40px;
-  display: flex;
-  justify-content: center;
-  border-top: 4px solid #3e70ff;
-  position: relative;
-  transition: all 200ms ease-in;
-}
+  .status span {
+    font-weight: 600;
+    padding-top: 20px;
+  }
 
-.status span {
-  font-weight: 600;
-  padding-top: 20px;
-}
+  .status span:before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    background-color: #e8eeff;
+    border-radius: 25px;
+    border: 4px solid #3e70ff;
+    position: absolute;
+    top: -15px;
+    left: 42%;
+    transition: all 200ms ease-in;
+  }
 
-.status span:before {
-  content: '';
-  width: 25px;
-  height: 25px;
-  background-color: #e8eeff;
-  border-radius: 25px;
-  border: 4px solid #3e70ff;
-  position: absolute;
-  top: -15px;
-  left: 42%;
-  transition: all 200ms ease-in;
-}
+  .swiper-control {
+    text-align: right;
+  }
 
-.swiper-control {
-  text-align: right;
-}
+  .swiper-container {
+    width: 100%;
+    height: 250px;
+    margin: 50px 0;
+    overflow: hidden;
+    padding: 0 20px 30px 20px;
+  }
 
-.swiper-container {
-  width: 100%;
-  height: 250px;
-  margin: 50px 0;
-  overflow: hidden;
-  padding: 0 20px 30px 20px;
-}
+  .swiper-slide {
+    width: 200px;
+    text-align: center;
+    font-size: 18px;
+  }
 
-.swiper-slide {
-  width: 200px;
-  text-align: center;
-  font-size: 18px;
-}
+  .swiper-slide:nth-child(2n) {
+    width: 40%;
+  }
 
-.swiper-slide:nth-child(2n) {
-  width: 40%;
-}
-
-.swiper-slide:nth-child(3n) {
-  width: 20%;
-}
+  .swiper-slide:nth-child(3n) {
+    width: 20%;
+  }
 </style>
 
 <!--Flexbox Magic source: https://codepen.io/spartanatreyu/pen/MYBoKXf-->
-<div  class="slideshow">
+<div class="slideshow">
   <div class="slide1"><img class="slide-image" src="../images/slideshow/1.jpg"></div>
   <div class="slide2"><img class="slide-image" src="../images/slideshow/rocket.jpg"></div>
   <div class="slide3"><img class="slide-image" src="../images/slideshow/2.jpg"></div>
@@ -100,7 +102,9 @@ description: In addition to visiting our local elementary and middle schools wee
 
 </div>
 
-<div style = "padding-bottom: 1%;"></div>
+<div style="padding-bottom: 1%;"></div>
+
+
 
 
 <div id="app" class="container">
@@ -127,38 +131,7 @@ description: In addition to visiting our local elementary and middle schools wee
     </div>
   </div>
 </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
 
-
-
-
-<script>
-  const data = [
-  { dateLabel: 'January 2017', title: 'Gathering Information' },
-  { dateLabel: 'February 2017', title: 'Planning' },
-  { dateLabel: 'March 2017', title: 'Design' },
-  { dateLabel: 'April 2017', title: 'Content Writing and Assembly' },
-  { dateLabel: 'May 2017', title: 'Coding' },
-  { dateLabel: 'June 2017', title: 'Testing, Review & Launch' },
-  { dateLabel: 'July 2017', title: 'Maintenance' }
-];
-
-new Vue({
-  el: '#app',
-  data: {
-    steps: data,
-  },
-  mounted() {
-    var swiper = new Swiper('.swiper-container', {
-      //pagination: '.swiper-pagination',
-      slidesPerView: 4,
-      paginationClickable: true,
-      grabCursor: true,
-      paginationClickable: true,
-      nextButton: '.next-slide',
-      prevButton: '.prev-slide',
-    });
-  }
-})
-</script>
+<script src='../timeline.js'></script>
