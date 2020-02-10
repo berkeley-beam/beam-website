@@ -4,9 +4,95 @@ heading:
 description: In addition to visiting our local elementary and middle schools weekly, our mentors also help organize and volunteer at a variety of educational outreach events throughout our community. Check out some highlights from our previous events below, and stay posted to see what events we will be participating in this semester!
 ---
 <title> Events </title>
+<head>
+  
+</head>
+
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css'>
+
+<style>
+  #app {
+    padding: 50px 0;
+  }
+
+  .timeline {
+    margin: 50px 0;
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    text-align: center;
+  }
+
+  .timeline li {
+    transition: all 200ms ease-in;
+  }
+
+  .timestamp {
+    width: 200px;
+    margin-bottom: 20px;
+    padding: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 100;
+  }
+
+  .status {
+    padding: 0px 40px;
+    display: flex;
+    justify-content: center;
+    border-top: 4px solid #3e70ff;
+    position: relative;
+    transition: all 200ms ease-in;
+  }
+
+  .status span {
+    font-weight: 600;
+    padding-top: 20px;
+  }
+
+  .status span:before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    background-color: #e8eeff;
+    border-radius: 25px;
+    border: 4px solid #3e70ff;
+    position: absolute;
+    top: -15px;
+    left: 42%;
+    transition: all 200ms ease-in;
+  }
+
+  .swiper-control {
+    text-align: right;
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 250px;
+    margin: 50px 0;
+    overflow: hidden;
+    padding: 0 20px 30px 20px;
+  }
+
+  .swiper-slide {
+    width: 200px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .swiper-slide:nth-child(2n) {
+    width: 40%;
+  }
+
+  .swiper-slide:nth-child(3n) {
+    width: 20%;
+  }
+</style>
 
 <!--Flexbox Magic source: https://codepen.io/spartanatreyu/pen/MYBoKXf-->
-<div  class="slideshow">
+<div class="slideshow">
   <div class="slide1"><img class="slide-image" src="../images/slideshow/1.jpg"></div>
   <div class="slide2"><img class="slide-image" src="../images/slideshow/rocket.jpg"></div>
   <div class="slide3"><img class="slide-image" src="../images/slideshow/2.jpg"></div>
@@ -16,15 +102,36 @@ description: In addition to visiting our local elementary and middle schools wee
 
 </div>
 
-<div style = "padding-bottom: 1%;"></div>
+<div style="padding-bottom: 1%;"></div>
 
 
 
 
-<!-- Old Events Calendar -->
-<!-- <div style="text-align:center">
-  <iframe
-    src="https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=YmVhbS5vdXRyZWFjaEBnbWFpbC5jb20&amp;color=%23039BE5"
-    style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<div id="app" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="swiper-container">
+        <p class="swiper-control">
+          <button type="button" class="btn btn-default btn-sm prev-slide">Prev</button>
+          <button type="button" class="btn btn-default btn-sm next-slide">Next</button>
+        </p>
+        <div class="swiper-wrapper timeline">
+          <div class="swiper-slide" v-for="item in steps">
+            <div class="timestamp">
+              <span class="date">{{item.dateLabel}}<span>
+            </div>
+            <div class="status">
+              <span>{{item.title}}</span>
+            </div>
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
 
-    -->
+<script src='../timeline.js'></script>
