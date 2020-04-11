@@ -6,6 +6,10 @@ description:
 
 ---
 <!--<div class="map" id="map"></div>-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.15/c3.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.15/c3.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
 <title> Donate </title>
 
 
@@ -30,5 +34,30 @@ description:
         <button style="padding: 2%; width: 35%;" onclick="window.open('https://asuc.org/donate/#section-1', '_blank')" class="custom-button"><span style="font-size: 0.8em; font-weight: bold;">Donate Now</span></button>
     </div>
 
-    <img style="width: 26.6vw; height: 20vw;" src="/images/bottle-rocket.jpg">
+
+    <div id="chart"></div>
+
+    <script>
+    var chart = c3.generate({
+        size: {
+          width: 480
+        },
+        data: {
+            columns: [
+                ['Briana\'s Parking Tickets', 248.4],
+                ['Everything Else', 111.6]
+            ],
+            type : 'donut',
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+        },
+        donut: {
+            title: "Funds Allocation"
+        }
+    });
+    </script>
+    <!-- <img style="width: 26.6vw; height: 20vw;" src="/images/bottle-rocket.jpg"> -->
+
+
 </section>
