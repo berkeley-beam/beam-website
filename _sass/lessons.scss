@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
 .lessonImage {
 	width: 15vw;
 	margin-right: 2vw;
@@ -88,13 +91,15 @@ div#final-lesson-container {
 .btn {
   background-color: inherit;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.17em;
   border: none;
   outline: none;
   cursor: pointer;
   //padding: 14px 16px;
   transition: 0.3s;
   margin-left: 3%;
+  font-family: "Montserrat", sans-serif;
 
   
 }
