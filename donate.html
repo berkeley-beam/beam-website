@@ -34,7 +34,7 @@ description:
         <button style="padding: 2%; width: 35%;" onclick="window.open('https://asuc.org/donate/#section-1', '_blank')" class="custom-button"><span style="font-size: 0.8em; font-weight: bold;">Donate Now</span></button>
     </div>
 
-
+<!-- styling locatd in layout.scss -->
     <div id="chart"></div>
 
     <script>
@@ -47,12 +47,28 @@ description:
               ['Lesson Materials', 130.68],
               ['Transportation to Site', 156.24],
               ['Recruitment and Orientation', 55.8],
-              ['Other Expenses', 17.28]
+              ['Other (background checks, repairs, etc.)', 17.28]
             ],
+            //5bba6f green
+            //fd151b red
+            //ffb30f yellow
+            //blue 437f97
+
+            colors: {
+            'Lesson Materials': '#5bba6f',
+            'Transportation to Site': '#437f97',
+            'Recruitment and Orientation': '#ffb30f',
+            'Other (background checks, repairs, etc.)': '#fd151b'
+        },
+        color: function (color, d) {
+            // d will be 'id' when called for legends
+            return d.id && d.id === 'data3' ? d3.rgb(color).darker(d.value / 150) : color;
+        },
             type : 'donut',
             onclick: function (d, i) { console.log("onclick", d, i); },
             onmouseover: function (d, i) { console.log("onmouseover", d, i); },
             onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+            
         },
         donut: {
             title: "Funds Allocation"
