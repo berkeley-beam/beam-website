@@ -6,38 +6,47 @@ description: Each of our lessons is custom-designed by one of our staff members 
 
 <title> Lessons </title>
 
+<div id="categoryButtonContainer">
+  <button id = "start" class="btn" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('physics')">Physics</button>
+  <button class="btn" onclick="filterSelection('biology')">Biology</button>
+  <button class="btn" onclick="filterSelection('anatomy')">Anatomy</button>
+  <button class="btn" onclick="filterSelection('misc')">Misc.</button>
+</div>
+
 <div id="lessons">
   <div class="lesson-container" id="lesson-container">
-    <script>
+    
+    <script language="JavaScript">
       var lessons = [
-        ["a_handful_of_fun", "A Handful of Fun", "Show a handful of applications of bioengineering and prostheses."],
-        ["oh_buoy", "Oh Buoy!", "Use hands-on demos and modules to give students a deep understanding of density."],
-        ["we_belung_together", "We Be-Lung Together", "Learn about the lungs and the importance of our respiratory system."],
-        ["feeling_eggsellent", "Feeling Eggsellent", "Introduce students to the concepts of force and impact."],
-        ["watts_up", "Watt's Up?", "Create circuits, explore electricity, and build your own robot."],
-        ["rollercoasters", "Marble Rollercoasters", "Introduce the concepts of potential and kinetic energy."],
-        ["bottle_rockets", "Bottle Rockets", "Introduce students to the fundamentals of rockets and propulsion."],
-        ["catapults", "Marshmallow Catapults", "Learn about simple kinematics and projectile motion."],
-        ["genetics", "Genetics", "Infer the existence and role of DNA before extracting it from a strawberry."],
-        ["artery", "BioE: Clogged Arteries", "Learn about the cardiovascular system by designing a solution to a clogged artery."],
-        ["heart", "BioE: Heart Valves", "Continue with biomedicine by dissecting sheep hearts and treating heart valves."],
-        ["cryptography", "Cryptography", "Crack a murder mystery by solving various ciphers."],
-        ["angular_momentum", "Angular Momentum", "Experiment with rotating objects to learn momentum, friction, and precession."],
-        ["digestion", "Digestion", "Follow the digestive system by focusing on the mouth, stomach, and intestines."],
-        ["earthquakes", "Earthquakes", "Explore the challenges of building earthquake-proof structures."]
+        ["a_handful_of_fun", "A Handful of Fun", "Show a handful of applications of bioengineering and prostheses.", "anatomy"],
+        ["oh_buoy", "Oh Buoy!", "Use hands-on demos and modules to give students a deep understanding of density.", "physics"],
+        ["we_belung_together", "We Be-Lung Together", "Learn about the lungs and the importance of our respiratory system.", "anatomy"],
+        ["feeling_eggsellent", "Feeling Eggsellent", "Introduce students to the concepts of force and impact.", "physics"],
+        ["watts_up", "Watt's Up?", "Create circuits, explore electricity, and build your own robot.", "physics"],
+        ["rollercoasters", "Marble Rollercoasters", "Introduce the concepts of potential and kinetic energy.", "physics"],
+        ["bottle_rockets", "Bottle Rockets", "Introduce students to the fundamentals of rockets and propulsion.", "physics"],
+        ["catapults", "Marshmallow Catapults", "Learn about simple kinematics and projectile motion.", "physics"],
+        ["genetics", "Genetics", "Infer the existence and role of DNA before extracting it from a strawberry.", "biology"],
+        ["artery", "BioE: Clogged Arteries", "Learn about the cardiovascular system by designing a solution to a clogged artery.", "anatomy"],
+        ["heart", "BioE: Heart Valves", "Continue with biomedicine by dissecting sheep hearts and treating heart valves.", "anatomy"],
+        ["cryptography", "Cryptography", "Crack a murder mystery by solving various ciphers.", "misc"],
+        ["angular_momentum", "Angular Momentum", "Experiment with rotating objects to learn momentum, friction, and precession.", "physics"],
+        ["digestion", "Digestion", "Follow the digestive system by focusing on the mouth, stomach, and intestines.", "anatomy"],
+        ["earthquakes", "Earthquakes", "Explore the challenges of building earthquake-proof structures.", "misc"]
         //["marine_science", "Marine Science", "Dive into oceanic physics, ecology, and conservation."]
       ];
 
       html = "";
       for (var i = 0; i < lessons.length; i++) {
         if (i % 3 == 0) {
-          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail left">';
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail left filterable ' + lessons[i][3] +'">';
         }
         if (i % 3 == 1) {
-          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail mid">';
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail left filterable ' + lessons[i][3] +'">';
         }
         if (i % 3 == 2) {
-          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail right">';
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail left filterable ' + lessons[i][3] +'">';
         }
         html += '<div class="caption">';
 
@@ -47,10 +56,56 @@ description: Each of our lessons is custom-designed by one of our staff members 
         html += '<p>' + lessons[i][2] + '</p>';
         html += '</div>';
         html += '<button style = "position: absolute; bottom: 0;" onclick = "window.open(' + "'../lessons_archive/" + lessons[i][0] + ".pdf'," + "'_blank')" + "\"" + 'class="custom-button"><span style= "font-size: .8em; font-weight: normal;">View</span></button></div>';
-
       }
       document.getElementById("lesson-container").innerHTML += html;
-    </script>
+
+
+function filterSelection(c) {
+
+  var selected, i;
+
+  selected = document.getElementsByClassName("filterable");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < selected.length; i++) {
+    RemoveClass(selected[i], "show");
+    if (selected[i].className.indexOf(c) > -1) AddClass(selected[i], "show");
+  }
+}
+  function AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+function RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+filterSelection("all")
+var btnContainer = document.getElementById("categoryButtonContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var clicked = document.getElementsByClassName("active");
+    clicked[0].className = clicked[0].className.replace("active", "");
+    this.className += " active";
+  });
+};
+document.getElementById("start").click();
+
+</script>
   </div>
 </div>
 
