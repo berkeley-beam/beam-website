@@ -12,13 +12,16 @@
 }
 
 .container {
-	max-width: 1140px;
+	max-width: 100%;
 
 	&.max-container {
 		max-width: 100%;
 		padding: 0;
 	}
 }
+
+
+
 
 header {
 	color: #fff;
@@ -223,8 +226,9 @@ span
 }
 
 .slide-image{
-	// height: 60vh; edited for now, let's try to keep all the images the same pixel by pixel size.
+	height: 60vh; // for now, let's try to keep all the images the same pixel by pixel size.
 	width: 40vw;
+	object-fit: cover;
 	overflow: hidden;
 }
 
