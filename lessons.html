@@ -7,10 +7,10 @@ description: Each of our lessons is custom-designed by one of our staff members 
 <title> Lessons </title>
 
 <div id="categoryButtonContainer">
-  <button id = "start" class="btn" onclick="filterSelection('all')"> Show all</button>
+  <button id = "start" class="btn" onclick="filterSelection('all')"> All</button>
   <button class="btn" onclick="filterSelection('physics')">Physics</button>
+  <button class="btn" onclick="filterSelection('chemistry')">Chemistry</button>
   <button class="btn" onclick="filterSelection('biology')">Biology</button>
-  <button class="btn" onclick="filterSelection('anatomy')">Anatomy</button>
   <button class="btn" onclick="filterSelection('misc')">Misc.</button>
 </div>
 
@@ -19,21 +19,21 @@ description: Each of our lessons is custom-designed by one of our staff members 
 
     <script language="JavaScript">
       var lessons = [
-        ["a_handful_of_fun", "A Handful of Fun", "A handful of applications of bioengineering and prostheses.", "anatomy"],
+        ["a_handful_of_fun", "A Handful of Fun", "A handful of applications of bioengineering and prostheses.", "misc"],
         ["oh_buoy", "Oh Buoy!", "Use hands-on demos and modules to give students a deep understanding of density.", "physics"],
-        ["we_belung_together", "We Be-Lung Together", "Learn about the lungs and the importance of our respiratory system.", "anatomy"],
+        ["we_belung_together", "We Be-Lung Together", "Learn about the lungs and the importance of our respiratory system.", "biology"],
         ["drop_it_like_its_hot", "Drop It Like It's Hot", "Introduce students to the concepts of force and impact.", "physics"],
         ["watts_up", "Watt's Up?", "Create circuits, explore electricity, and build your own robot.", "physics"],
         ["rollercoasters", "Marble Rollercoasters", "Introduce the concepts of potential and kinetic energy.", "physics"],
         ["blast_off_with_beam", "Blast off With BEAM", "Introduce students to the fundamentals of rockets and propulsion.", "physics"],
         ["catapults", "Catapulting into BEAM", "Learn about simple kinematics and projectile motion.", "physics"],
         ["blue_gene_baby", "Blue Gene Baby", "Explore the topics of genetics and DNA.", "biology"],
-        ["get_pumped", "Get Pumped!", "Discover the crossover between physics and biology in the cardiovascular system.", "anatomy"],
+        ["get_pumped", "Get Pumped!", "Discover the crossover between physics and biology in the cardiovascular system.", "biology"],
         ["i_heart_beam", "I Heart BEAM", "Learn about the cardiovascular system, and build your own heart valve!", "anatomy"],
         ["cryptography", "Cryptography", "Crack a murder mystery by solving various ciphers.", "misc"],
-        ["sugar_rush", "Sugar Rush", "Spend some time exploring how sweet nutrition can be!", "anatomy"],
-        ["miraculin", "When Life Gives You Lemons...", "Explore the science behind taste.", "anatomy"],
-        ["its_not_my_fault", "It’s Not my Fault!", "Explore the challenges of building earthquake-proof structures.", "misc"],
+        ["sugar_rush", "Sugar Rush", "Spend some time exploring how sweet nutrition can be!", "biology"],
+        ["miraculin", "When Life Gives You Lemons...", "Explore the science behind taste.", "misc"],
+        ["its_not_my_fault", "It’s Not my Fault!", "Explore the challenges of building earthquake-proof structures.", "physics"],
         ["seas_get_degrees", "Seas Get Degrees", "Learn about the ocean and its inhabitants as well as the effects of human activity on the ocean's ecosystem.", "biology"],
         ["snap_out_of_it", "Snap Out of It", "A quick introduction to the fundamental ideas and concepts of computer science.", "misc"],
         ["big_beam_energy", "Big Beam Energy", "Explore several forms of renewable energy.", "misc"]
