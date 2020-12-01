@@ -7,6 +7,9 @@ description:
 ---
 <!--<div class="map" id="map"></div>-->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.15/c3.min.css" rel="stylesheet">
+
+<link href="/donors.css" rel="stylesheet">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.15/c3.min.js"></script>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 
@@ -79,37 +82,144 @@ description:
 </section>
 
 <!-- feel free to use inline styling now, but we should move this to an external css sheet at some point.-->
-<section style="background-color: #f2f2f2; width: 100vw; margin-left: calc(-50vw + 50%);">
-    <div style="padding-right:8%; padding-left:8%; margin:auto; padding-top:5%;">
+<section class="donor-section">
+    <div class="section-header">
         <h2> Our Donors </h2>
         <p style="text-align: center;">Special thanks to our donors from our Fall 2020 campaign for their generosity and continued support!</p> 
 
-        <div style="display: table; clear: both;">
+        <div>
+            <div id="single-donor-list"></div>
+
             <!-- denotes the left donor column -->
-            <div style="float: left; width: 50%; padding: 25px;">
-                <div style="padding-bottom: 15px;">
-                    <p><strong>Donor 1</strong></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt impedit provident facilis fugiat quos, consectetur maxime optio rem distinctio debitis ipsam eligendi sapiente expedita, vel unde dolor, sit at voluptatibus?</p>
-                </div>
-            
-                <div>
-                    <p><strong>Donor 3</strong></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt impedit provident facilis fugiat quos, consectetur maxime optio rem distinctio debitis ipsam eligendi sapiente expedita, vel unde dolor, sit at voluptatibus?</p>
-                </div>
+            <div class="donor-col-left">
+                <div id="left-donors" style="width: 200px;"></div>
             </div>
 
             <!-- denotes the right donor column -->
-            <div style="float: left; width: 50%; padding: 20px;">
-                <div style="padding-bottom: 15px;">
-                    <p><strong>Donor 2</strong></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt impedit provident facilis fugiat quos, consectetur maxime optio rem distinctio debitis ipsam eligendi sapiente expedita, vel unde dolor, sit at voluptatibus?</p>
-                </div>
-
-                <div>
-                    <p><strong>Donor 4</strong></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt impedit provident facilis fugiat quos, consectetur maxime optio rem distinctio debitis ipsam eligendi sapiente expedita, vel unde dolor, sit at voluptatibus?</p>
-                </div>
+            <div class="donor-col-right">
+                <div id="right-donors" style="width: 200px;"></div>
             </div>
+
+            <br style="clear:both;" />
+
+            <script>
+                // variables
+                var twoColDisplay;
+                var widthLimit = 1080;
+                leftDonors = document.getElementById("left-donors");
+                rightDonors = document.getElementById("right-donors");
+                singleDonorList = document.getElementById("single-donor-list");
+                
+                // donor list, modify as needed
+                const donors = [
+                    { donorName: 'Ethan Seither' },
+                    { donorName: 'Caroline Wilcox' },
+                    { donorName: 'Vicy Zhang' },
+                    { donorName: 'Kelly Chang' },
+                    { donorName: 'Rosalia Mendoza' },
+                    { donorName: 'AJ Almaguer' },
+                    { donorName: 'Patrick Oare' },
+                    { donorName: 'Wayne Li' },
+                    { donorName: 'David Carballal' },
+                    { donorName: 'Yolanda Shen' },
+                    { donorName: 'Joey Tinga' },
+                    { donorName: 'Xiaoyan Lu' },
+                    { donorName: 'Carrie Hayes-Greenberg' },
+                    { donorName: 'Ekta Partani' },
+                    { donorName: 'Dwarka Partani' },
+                    { donorName: 'Kevin Ko' },
+                    { donorName: 'Monica Panzani' },
+                    { donorName: 'Lina Lippiatt' },
+                    { donorName: 'Ben Winston' },
+                    { donorName: 'Frank Staszak' },
+                    { donorName: 'Kavita Dayani' }
+                ];
+                // in-place sorts the donors
+                donors.sort(function(a, b) {
+                    return (a.donorName < b.donorName) ? -1 : 1;
+                });
+
+                function displayDonors() {
+                    if (window.innerWidth < widthLimit) {
+                        // use single column display
+                        twoColDisplay = false;
+                        for (var i = 0; i < donors.length; i++) {
+                            donorEl = document.createElement("P");
+                            donorNameEl = document.createElement("strong");
+                            donorNameEl.innerHTML = donors[i]['donorName'];
+                            donorEl.append(donorNameEl);
+
+                            singleDonorList.append(donorEl);
+                        }
+                    } else {
+                        // use two column display
+                        twoColDisplay = true;
+                        for (var i = 0; i < donors.length; i++) {
+                            donorEl = document.createElement("P");
+                            donorNameEl = document.createElement("strong");
+                            donorNameEl.innerHTML = donors[i]['donorName'];
+                            donorEl.append(donorNameEl);
+
+                            if (i % 2 == 0) {
+                                leftDonors.append(donorEl);
+                            } else {
+                                rightDonors.append(donorEl);
+                            }
+                        }
+                    }
+                }
+
+                // displays the donors in the array of JSONs
+                displayDonors();
+
+
+                function clearDonors(listOfElem) {
+                    for (var i = 0; i < listOfElem.length; i++) {
+                        donorListEl = listOfElem[i];
+                        donorListEl.innerHTML = '';
+                    }
+                }
+                
+                // listener that changes the donor display (if needed) based on resize
+                if (window.attachEvent) {
+                    window.attachEvent('onresize', function() {
+                        if (window.innerWidth < widthLimit) {
+                            if (twoColDisplay) {
+                                clearDonors([leftDonors, rightDonors]);
+                                displayDonors();
+                            }
+                            // else do nothing
+                        }
+                        else {
+                            if (!twoColDisplay) {
+                                clearDonors([singleDonorList]);
+                                displayDonors();
+                            }
+                        }
+                    });
+                } else if (window.addEventListener) {
+                    window.addEventListener('resize', function() {
+                        if (window.innerWidth < widthLimit) {
+                            if (twoColDisplay) {
+                                clearDonors([leftDonors, rightDonors]);
+                                displayDonors();
+                            }
+                            // else do nothing
+                        }
+                        else {
+                            if (!twoColDisplay) {
+                                clearDonors([singleDonorList]);
+                                displayDonors();
+                            }
+                        }
+                    }, true);
+                } else {
+                    //The browser does not support Javascript event binding
+                }
+
+
+            </script>
+
 
         </div>
     
