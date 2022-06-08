@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 html {
 	scroll-behavior: smooth;
   }
@@ -96,9 +97,21 @@ html {
 
 
   }
+	#acronym_v2 {
+
+	font-family: 'Poppins', sans-serif;
+	font-size: 190px;
+
+
+  }
   #words {
 	font-family: 'Source Sans Pro', sans-serif;
 	  font-size: 40px;
+	  margin-top: -2%;
+  }
+	#words_v2 {
+	font-family: 'Poppins', sans-serif;
+	  font-size: 38px;
 	  margin-top: -2%;
   }
 
