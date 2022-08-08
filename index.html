@@ -15,7 +15,87 @@ description: Berkeley Engineers and Mentors
 
 </section> -->
 
-<div class="Logo">
+<div class="slideshow-container">
+
+	<div class="centered">
+		<strong id="acronym_v2" >BEAM</strong>
+		<br>
+		<h1 id="words_v2">Berkeley Engineers and Mentors</h1>
+		<br>
+		<a class="scroll-down" href="#target"></a>
+	</div>
+
+	<div class="mySlides">
+		<div class="numbertext">1 / 7</div>
+		<img src="/images/fa19decal.jpg" style="width:100%; height: 700px;">
+		<div class="text2">Fall 2019 Decal</div>
+	  </div>
+
+	  <div class="mySlides">
+		<div class="numbertext">2 / 7</div>
+		<img src="/images/pic1.jpg" style="width:100%; height: 700px;">
+		<div class="text2"></div>
+	  </div>
+
+	  <div class="mySlides">
+		<div class="numbertext">3 / 7</div>
+		<img src="/images/pic2.jpg" style="width:100%; height: 700px;">
+		<div class="text2"></div>
+	  </div>
+
+	  <div class="mySlides">
+		<div class="numbertext">4 / 7</div>
+		<img src="/images/pic3.jpg" style="width:100%; height: 700px;">
+		<div class="text2"></div>
+	  </div>
+
+	  <div class="mySlides">
+		<div class="numbertext">5 / 7</div>
+		<img src="/images/pic4.jpg" style="width:100%; height: 700px;">
+		<div class="text2"></div>
+	  </div>
+
+	  <div class="mySlides">
+		<div class="numbertext">6 / 7</div>
+		<img src="/images/pic5.jpg" style="width:100%; height: 700px;">
+		<div class="text2"></div>
+	  </div>
+
+	  <div class="mySlides">
+		<div class="numbertext">7 / 7</div>
+		<img src="/images/pic6.jpg" style="width:100%; height: 700px;">
+		<div class="text2"></div>
+	  </div>
+	
+	<!-- <div class="mySlides">
+	  <div class="numbertext">2 / 3</div>
+	  <img src="/images/beam1.jpg" style="width:100%; height: 700px;">
+	  <div class="text2">Fun Experiments</div>
+	</div> -->
+	
+	<!-- <div class="mySlides">
+	  <div class="numbertext">3 / 3</div>
+	  <img src="/images/beam2.jpg" style="width:100%; height: 700px;">
+	  <div class="text2">Bottle Rocket Experiment Outside</div>
+	</div> -->
+	
+	</div>
+	<br>
+	
+	<div style="text-align:center">
+	  <span class="dot"></span> 
+	  <span class="dot"></span> 
+	  <span class="dot"></span> 
+	  <span class="dot"></span> 
+	  <span class="dot"></span> 
+	  <span class="dot"></span> 
+	  <span class="dot"></span> 
+	</div>
+
+
+
+
+<!-- <div class="Logo">
 	<div class="stuff">
 		<strong id="acronym_v2" >BEAM</strong>
 		<br>
@@ -24,7 +104,7 @@ description: Berkeley Engineers and Mentors
 		<a class="scroll-down" href="#target"></a>
 	</div>
 
-</div>
+</div> -->
 
 	<div class="content" style="flex-direction: row; padding-right: 8%; padding-left: 10%;">
 	<a name="target"></a>
@@ -95,3 +175,25 @@ description: Berkeley Engineers and Mentors
 	</section>
 
 </div>
+
+<script>
+	let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+	</script>
