@@ -47,10 +47,10 @@ description:
         },
         data: {
             columns: [
-              ['Lesson Materials', 130.68],
-              ['Transportation to Site', 156.24],
-              ['Recruitment and Orientation', 55.8],
-              ['Other (background checks, repairs, etc.)', 17.28]
+            ['Lesson Materials', 40],
+              ['Transportation to Site', 40],
+              ['Risk Management', 16],
+              ['Advertising and Member Recruitment', 4]
             ],
             //5bba6f green
             //fd151b red
@@ -60,8 +60,8 @@ description:
             colors: {
             'Lesson Materials': '#5bba6f',
             'Transportation to Site': '#437f97',
-            'Recruitment and Orientation': '#ffb30f',
-            'Other (background checks, repairs, etc.)': '#fd151b'
+            'Risk Management': '#ffb30f',
+            'Advertising and Member Recruitment': '#fd151b'
         },
         color: function (color, d) {
             // d will be 'id' when called for legends
@@ -74,7 +74,7 @@ description:
             
         },
         donut: {
-            title: "Funds Allocation"
+            title: "BEAM 2022-23 Budget"
         }
     });
     </script>
@@ -85,7 +85,7 @@ description:
 <section class="donor-section">
     <div class="section-header">
         <h2> Our Donors </h2>
-        <p style="text-align: center;">Special thanks to our donors from our Fall 2020 campaign for their generosity and continued support!</p> 
+        <p style="text-align: center;">Special thanks to our donors from our Fall 2022 campaign for their generosity and continued support!</p> 
 
         <div>
             <div id="single-donor-list"></div>
@@ -112,27 +112,19 @@ description:
                 
                 // donor list, modify as needed
                 const donors = [
-                    { donorName: 'Ethan Seither' },
-                    { donorName: 'Caroline Wilcox' },
-                    { donorName: 'Vicy Zhang' },
-                    { donorName: 'Kelly Chang' },
-                    { donorName: 'Rosalia Mendoza' },
-                    { donorName: 'AJ Almaguer' },
-                    { donorName: 'Patrick Oare' },
-                    { donorName: 'Wayne Li' },
-                    { donorName: 'David Carballal' },
-                    { donorName: 'Yolanda Shen' },
-                    { donorName: 'Joey Tinga' },
-                    { donorName: 'Xiaoyan Lu' },
-                    { donorName: 'Carrie Hayes-Greenberg' },
-                    { donorName: 'Ekta Partani' },
-                    { donorName: 'Dwarka Partani' },
-                    { donorName: 'Kevin Ko' },
-                    { donorName: 'Monica Panzani' },
-                    { donorName: 'Lina Lippiatt' },
-                    { donorName: 'Ben Winston' },
-                    { donorName: 'Frank Staszak' },
-                    { donorName: 'Kavita Dayani' }
+                    { donorName: 'Elizabeth Greenberg' },
+                    { donorName: 'Marisa Wong' },
+                    { donorName: 'Cliff Kishimoto' },
+                    { donorName: 'Alexander Orimoloye' },
+                    { donorName: 'Winna Kishimoto' },
+                    { donorName: 'Melody Wei' },
+                    { donorName: 'Monica Cao' },
+                    { donorName: 'Matthew Cuan' },
+                    { donorName: 'Kaushal Partani' },
+                    { donorName: 'Kevin Arifin' },
+                    { donorName: 'Edward Wang' },
+                    { donorName: 'Brendan Tsuda' },
+                    { donorName: 'Michael Prime' },
                 ];
                 // in-place sorts the donors
                 donors.sort(function(a, b) {
