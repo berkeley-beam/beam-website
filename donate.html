@@ -34,7 +34,7 @@ description:
 
 
 
-        <button style="padding: 2%; width: 35%;" onclick="window.open('https://asuc.org/donate/#section-1', '_blank')" class="custom-button"><span style="font-size: 0.8em; font-weight: bold;">Donate Now</span></button>
+        <button style="padding: 2%; width: 35%;" onclick="window.open('https://crowdfund.berkeley.edu/beamin', '_blank')" class="custom-button"><span style="font-size: 0.8em; font-weight: bold;">Donate Now</span></button>
     </div>
 
 <!-- styling locatd in layout.scss -->
@@ -85,6 +85,124 @@ description:
 <section class="donor-section">
     <div class="section-header">
         <h2> Our Donors </h2>
+        <p style="text-align: center;">Special thanks to our donors from our Spring 2024 campaign for their generosity and continued support!</p> 
+
+        <div>
+            <div id="single-donor-list"></div>
+
+            <!-- denotes the left donor column -->
+            <div class="donor-col-left">
+                <div id="left-donors" style="width: 200px;"></div>
+            </div>
+
+            <!-- denotes the right donor column -->
+            <div class="donor-col-right">
+                <div id="right-donors" style="width: 200px;"></div>
+            </div>
+
+            <br style="clear:both;" />
+
+            <script>
+                // variables
+                var twoColDisplay;
+                var widthLimit = 1080;
+                leftDonors = document.getElementById("left-donors");
+                rightDonors = document.getElementById("right-donors");
+                singleDonorList = document.getElementById("single-donor-list");
+                
+                // donor list, modify as needed
+                const donors1 = [
+                    { donorName: 'Sejal Rajurkar' },
+                ];
+                // in-place sorts the donors
+                donors1.sort(function(a, b) {
+                    return (a.donorName < b.donorName) ? -1 : 1;
+                });
+
+                function displayDonors() {
+                    if (window.innerWidth < widthLimit) {
+                        // use single column display
+                        twoColDisplay = false;
+                        for (var i = 0; i < donors1.length; i++) {
+                            donorEl = document.createElement("P");
+                            donorNameEl = document.createElement("strong");
+                            donorNameEl.innerHTML = donors1[i]['donorName'];
+                            donorEl.append(donorNameEl);
+
+                            singleDonorList.append(donorEl);
+                        }
+                    } else {
+                        // use two column display
+                        twoColDisplay = true;
+                        for (var i = 0; i < donors1.length; i++) {
+                            donorEl = document.createElement("P");
+                            donorNameEl = document.createElement("strong");
+                            donorNameEl.innerHTML = donors1[i]['donorName'];
+                            donorEl.append(donorNameEl);
+
+                            if (i % 2 == 0) {
+                                leftDonors.append(donorEl);
+                            } else {
+                                rightDonors.append(donorEl);
+                            }
+                        }
+                    }
+                }
+
+                // displays the donors in the array of JSONs
+                displayDonors();
+
+
+                function clearDonors(listOfElem) {
+                    for (var i = 0; i < listOfElem.length; i++) {
+                        donorListEl = listOfElem[i];
+                        donorListEl.innerHTML = '';
+                    }
+                }
+                
+                // listener that changes the donor display (if needed) based on resize
+                if (window.attachEvent) {
+                    window.attachEvent('onresize', function() {
+                        if (window.innerWidth < widthLimit) {
+                            if (twoColDisplay) {
+                                clearDonors([leftDonors, rightDonors]);
+                                displayDonors();
+                            }
+                            // else do nothing
+                        }
+                        else {
+                            if (!twoColDisplay) {
+                                clearDonors([singleDonorList]);
+                                displayDonors();
+                            }
+                        }
+                    });
+                } else if (window.addEventListener) {
+                    window.addEventListener('resize', function() {
+                        if (window.innerWidth < widthLimit) {
+                            if (twoColDisplay) {
+                                clearDonors([leftDonors, rightDonors]);
+                                displayDonors();
+                            }
+                            // else do nothing
+                        }
+                        else {
+                            if (!twoColDisplay) {
+                                clearDonors([singleDonorList]);
+                                displayDonors();
+                            }
+                        }
+                    }, true);
+                } else {
+                    //The browser does not support Javascript event binding
+                }
+
+
+            </script>
+
+
+        </div>
+
         <p style="text-align: center;">Special thanks to our donors from our Fall 2022 campaign for their generosity and continued support!</p> 
 
         <div>
