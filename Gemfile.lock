@@ -62,7 +62,7 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     thread_safe (0.3.6)
-    tzinfo (1.2.3)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     tzinfo-data (1.2017.2)
       tzinfo (>= 1.0.0)
@@ -78,7 +78,7 @@ DEPENDENCIES
   jekyll-paginate (= 1.1.0)
   jekyll-seo-tag (= 2.4.0)
   jekyll-sitemap (= 1.2.0)
-  tzinfo (= 1.2.3)
+  tzinfo (= 1.2.10)
   tzinfo-data (= 1.2017.2)
 
 BUNDLED WITH
