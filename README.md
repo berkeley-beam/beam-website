@@ -2,22 +2,44 @@
 
 ## Getting started
 
-To do dev work for the site, pull the repo to your local machine. You will then
-need to install jekyll and bundler using the following commands:
+To do dev work for the site, pull the repo to your local machine.
+
+The `GEMFILE.lock` contains all dependencies needed + the versions of those dependencies.
+
+Note: These setup instructions were written with local ruby version `2.6.0`. For the following instructions, prepend `sudo` to the commands as needed.
+
+Install the bundler:
+```commandline
+gem install bundler
+```
+
+If there are any complaints from ruby, install the version it recommends by specifying the version.
+
+```commandline
+gem install bundler -v 2.4.22
+```
+
+The next step should be to `bundle install`, however in the current dependencies, there's a [known issue](https://stackoverflow.com/a/73042570). Find the version of ffi from the `GEMFILE.lock` and attempt to install it with the following flags:
+
+```commandline
+gem install ffi -v '1.12.2' -- --with-cflags=-Wno-implicit-function-declaration
+```
+
+From here, you should be able to run the following command to download the rest of the dependencies. This command will use the `GEMFILE.lock` to resolve dependencies:
 
 ```
-gem install jekyll bundler
 bundle install
-bundle exec jekyll serve
+```
 
+Finally, run the command to bring the local site up:
+
+```commandline
+bundle exec jekyll serve
 ```
 
 The `jekyll serve` command serves up a local instance of the site on port 4000.
 Visit the instance in your browser at localhost:4000. If you need more in-depth
 instructions, check out [jekyll's website](https://jekyllrb.com).
-
-Update 3/26/2024: ^^^ This does NOT WORK!!!! You run into some dependency issues with gem and jekyll, so we suggest 
-just pushing everything straight to master branch and seeing the changes live on the website :))))
 
 ## Process
 
