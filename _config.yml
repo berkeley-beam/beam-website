@@ -1,23 +1,23 @@
 # ----
 # Site
 
-title:
-url:
-baseurl:
-google_analytics_key:
-google_maps_javascript_api_key:
-disqus_shortname:
+title: BEAM
+url: https://beam.berkeley.edu/
+baseurl: '/'
+# google_analytics_key:
+# google_maps_javascript_api_key:
+# disqus_shortname:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /favicon.png
 description:
 author:
-  name:
-  email:
-  twitter: # twitter username without the @ symbol
-social:
-  name:
-  links:
+  # name:
+  # email:
+  # twitter: # twitter username without the @ symbol
+# social:
+#   name:
+#   links:
 
 # -----
 # Build
