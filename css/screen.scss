@@ -1,9 +1,9 @@
 ---
 ---
-@import "mixins/flexbox";
-@import "mixins/columns";
-@import "variables";
-@import "elements";
+@use "mixins/flexbox" as *;
+@use "mixins/columns" as *;
+@use "variables" as *;
+@use "elements" as *;
 @import "landing-page";
 @import "layout";
 @import "pricing";
