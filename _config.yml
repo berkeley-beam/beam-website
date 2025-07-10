@@ -68,6 +68,13 @@ defaults:
     values:
       full_width: true
 
+sass:
+  style: expanded
+  sass_dir: _sass
+  sourcemap: always
+  quiet_deps: true
+  verbose: false
+
 jekyll-archives:
   enabled:
     - categories
