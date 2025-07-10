@@ -23,11 +23,11 @@
 	}
 
 	.contact-form, .contact-details  {
+		margin: 0 30px;
 		@media #{$desktop} {
 			-webkit-flex: 1;
 			flex: 1;
 		}
-		margin: 0 30px;
 	}
 
 	.contact-details {
