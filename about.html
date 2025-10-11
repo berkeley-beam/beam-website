@@ -293,33 +293,57 @@ description:
             //List of all staff members.
             //[Name, Major/Yr, Committees, img filename (place in image folder, no file extension necessary)]
             //2023 execs: Aditya, Kaitlyn, Nicole, Emily, Gaby, Akshara, Lucy, Safaa, Rishi, Ashley
-            var data = [
-                ['Alice Peng','MCB 2025', 'Curriculum | Site Leading','Alice'],
+            var data = [ // CONVERT IMAGES TO JPG AND CORRECT EXEC NAMES
+                ['Alice Peng','MCB Immunology 2025', 'Curriculum | Site Leading','Alice'],
+                ['Alisanne Choi', 'Applied Math 2028', 'Site Leading | External Affairs', 'Alisanne'],
                 ['Annika Nam','Public Health + MCB 2026', 'Site Leading | Mentor Development','Annika'],
-                ['Apollo Loh', 'EECS + Philosophy 2026', 'Head of Logistics', 'apollo'],
+                ['Apollo Loh', 'EECS + Philosophy 2026', 'Head of Logistics', 'Apollo'],
+                ['Araina Vohra', 'Applied Math 2027', 'Logistics | Mentor Development', 'Araina'],
+                ['August Drake', 'Mechanical Engineering 2028', 'Logistics | Site Leading', 'August'],
                 ['Bradley Louie', '2026', 'Logistics | Mentor Development', 'white'],
                 ['Brandon Su', 'Applied Math + CS 2026', 'Head of Mentor Development', 'Brandon'],
+                ['Brittney Chan', 'Data Science 2026', 'Head of Outreach', 'Brittney'],
+                ['Chloe Silagan', 'MCB 2026', 'Site Leading | Outreach', 'Chloe'],
+                ['Derek Fong', 'Mechanical Engineering 2026', 'Curriculum | Outreach', 'Derek'],
                 ['Ella Kasamis', 'BioE 2026', 'Logistics | Site Leading', 'ella'],
-                ['Grace Xie', 'MCB + Data Science 2026', 'Head of Curriculum', 'grace'],
-                ['James Ghirardo', 'MechE 2026', 'Head of Site Leading', 'James'],
+                ['Emily Luo', 'Applied Math 2028', 'Logistics | Mentor Development', 'white'],
+                ['Grace Kim', 'MCB + Microbial Biology 2026', 'Head of Curriculum', 'Grace_K'],
+                ['Grace Xie', 'MCB + Data Science 2026', 'Head of Curriculum', 'Grace_X'],
+                ['Ittai Nelken-Regev', 'Applied Math 2027', 'Head of External Affairs', 'Ittai'],
+                ['James Ghirardo', 'Mechanical Engineering 2026', 'Head of Site Leading', 'James'],
+                ['Jared Haertel', 'Engineering Math and Statistics 2027', 'Curriculum | Logistics', 'Jared'],
+                ['Jayson Abarca', 'Public Health 2026', 'Site Leading | Outreach', 'Jayson'],
+                ['Jessica Ta', 'Econ and Media Studies + Nutrition Minor 2027', 'External Affairs | Outreach', 'Jessica'],
                 ['Kayla Lowenberg', 'MechE 2026', 'Co-President', 'kayla'],
-                ['Lucas Parker', 'IB 2027', 'Co-President', 'Lucas'],
-                ['Meisen Wang', 'MCB + Data Science 2026', 'Site Leading | Curriculum', 'meisen'],
+                ['Lilly Kawabata', 'Chemical Biology 2028', 'Site Leading | Outreach', 'Lilly'],
+                ['Lucas Parker', 'Integrative Biology 2027', 'Co-President', 'Lucas'],
+                ['Marina Halbert', 'Neuroscience 2028', 'Site Leading | Outreach', 'Marina'],
+                ['Meisen Wang', 'MCB + Data Science 2026', 'Site Leading | Curriculum', 'Meisen'],
                 ['Michelle Jeong', 'Material Science Engineering 2026', 'Site Leading | Outreach', 'michelle'],
                 ['Mira Chatrathi', 'Data Science 2026', 'Site Leading | Mentor Development', 'mira'],
-                ['Natalie Hoang', 'IEOR 2026', 'Head of Logistics', 'natalie'],
-                ['Shu-Han Lim', 'CivilEng 2027', 'Head of Outreach', 'Shuhan'],
-                ['Valeria Pasillas', 'Political Science 2026', 'Head of Site Leading', 'Valeria'],
-                ['Zachary Liu', 'MechE 2025', 'External Affairs | Logistics', 'zachary']
+                ['Natalie Hoang', 'IEOR + DS 2026', 'Head of Logistics', 'Natalie'],
+                ['Nathan Leung', 'Business Administration + Data Science 2028', 'Site Leading | External Affairs', 'Nathan'],
+                ['Nolan Mierzwa', 'Civil Engineering 2028', 'Logistics | Mentor Development', 'Nolan'],
+                ['Pranati Prashanth', 'MCB + Cognitive Science 2028', 'Curriculum | Site Leading', 'white'],
+                ['Roselyn Maldonado', 'MCB with Neurobiology Emphasis 2026', 'Curriculum | Site Leading', 'Roselyn'],
+                ['Ryan Raphael', 'Chemical Biology 2028', 'Logistics | External Affairs', 'Ryan'],
+                ['Saide Curiel', 'Public Health 2026', 'Site Leading | External Affairs', 'Saide'],
+                ['Shreyas Thumathy', 'Stats + Math 2028', 'External Affairs | Outreach', 'Shreyas'],
+                ['Shu-Han Lim', 'Civil Engineering 2027', 'Head of Outreach', 'Shu-Han'],
+                ['Valentin Tello', '2028', 'Site Leading | Mentor Development', 'Valentin'],
+                ['Valeria Pasillas', 'Political Science + Minor in Education and Public Policy 2026', 'Head of Site Leading', 'Valeria'],
+                ['Yadany Alavez', 'Integrative Biology 2026', 'Head of External Affairs', 'Yadany'],
+                ['Zachary Liu', 'MechE 2025', 'External Affairs | Logistics', 'zachary'],
+                ['Zoe LoCicero', 'Molecular and Cell Biology 2027', 'Curriculum | Site Leading', 'Zoe']
             ];
             //Categories to sort by. In this case, sort by year.
             var sortCategories = [
                 "President",
-                "Exec",
-                "2023",
-                "2024",
+                "Head", // exec
                 "2025",
-                "2026"
+                "2026",
+                "2027",
+                "2028"
             ];
             var htmlExpr = '<div class=\"container-row\">';
 
