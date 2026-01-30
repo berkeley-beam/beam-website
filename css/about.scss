@@ -310,6 +310,12 @@ h1 {
     padding: 10px;
 }
 
+/* this is for one news item at the top (chancellor's award) */
+.top {
+    display: flex;
+    gap: 30px;
+}
+
 @media(max-width: 950px) {
     .news-logo {
         display: none;
